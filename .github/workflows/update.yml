@@ -1,0 +1,40 @@
+name: LG 데이터 자동 갱신
+
+on:
+  schedule:
+    # 매일 23:00 UTC = 한국시간(KST) 아침 08:00
+    - cron: "0 23 * * *"
+  workflow_dispatch: {}   # 깃허브에서 수동 실행 버튼도 제공
+
+permissions:
+  contents: write         # data.json 커밋/푸시 권한
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: 파이썬 준비
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 라이브러리 설치
+        run: pip install -r requirements.txt
+
+      - name: KBO 데이터 수집 → data.json
+        run: python scraper/update_data.py
+
+      - name: 변경분 있으면 커밋 & 푸시
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          if git diff --staged --quiet; then
+            echo "변경 없음 - 커밋 생략"
+          else
+            git commit -m "chore: LG 데이터 자동 갱신 ($(date -u +%Y-%m-%d))"
+            git push
+          fi

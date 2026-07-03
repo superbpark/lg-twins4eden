@@ -1,0 +1,158 @@
+/* =============================================
+   표현 층: LG 트윈스 색(적색·검정) + 카드 디자인
+   ============================================= */
+
+:root {
+  --lg-red: #c30452;      /* LG 트윈스 대표 적색 */
+  --lg-dark: #1a1a1a;
+  --bg: #f4f4f6;
+  --card-bg: #ffffff;
+  --text: #222;
+  --muted: #888;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  padding-bottom: 2rem;
+}
+
+/* ── 헤더 ── */
+.header {
+  background: linear-gradient(135deg, var(--lg-red), var(--lg-dark));
+  color: #fff;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.header h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+.header p {
+  opacity: 0.85;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+/* ── 카드 공통 ── */
+main {
+  max-width: 640px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid var(--lg-red);
+}
+.card h2 {
+  font-size: 1rem;
+  color: var(--lg-red);
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+.card p {
+  margin: 0.25rem 0;
+}
+
+/* ── 최근 경기 ── */
+.matchup {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.score {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0.5rem 0 !important;
+}
+.result-badge {
+  font-size: 0.9rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  color: #fff;
+}
+.result-badge.W { background: var(--lg-red); }
+.result-badge.L { background: #555; }
+.highlight {
+  background: #fff5f8;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+  margin-top: 0.6rem !important;
+}
+
+/* ── 시즌 성적 ── */
+.rank {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--lg-red);
+}
+
+/* ── 최근 10경기 ── */
+.form-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.dot {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+}
+.dot.W { background: var(--lg-red); }
+.dot.L { background: #bbb; }
+
+/* ── 주요 선수 ── */
+.player {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.player:last-child { border-bottom: none; }
+.player-name { font-weight: 700; min-width: 4rem; }
+.player-pos {
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: #f2f2f4;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+}
+.player-stat { margin-left: auto; font-weight: 600; }
+
+/* ── 데이터 없음 상태 ── */
+.empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── 푸터 ── */
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}

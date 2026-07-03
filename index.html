@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LG 트윈스 오늘의 경기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ① 헤더 -->
+  <header class="header">
+    <h1>LG 트윈스</h1>
+    <p id="updated-at"></p>          <!-- ← 여기에 날짜 채움 -->
+  </header>
+
+  <main>
+    <!-- ② 오늘의 경기 -->
+    <section class="card" id="last-game">
+      <h2>최근 경기</h2>
+      <div id="last-game-body"></div>  <!-- ← app.js가 채움 -->
+    </section>
+
+    <!-- ③ 시즌 요약 -->
+    <section class="card" id="season">
+      <h2>시즌 성적</h2>
+      <div id="season-body"></div>
+    </section>
+
+    <!-- ④ 최근 10경기 -->
+    <section class="card" id="recent-form">
+      <h2>최근 10경기</h2>
+      <div id="recent-form-body"></div>
+    </section>
+
+    <!-- ⑤ 주요 선수 -->
+    <section class="card" id="key-players">
+      <h2>주요 선수</h2>
+      <div id="key-players-body"></div>
+    </section>
+
+    <!-- ⑥ 다음 경기 -->
+    <section class="card" id="next-game">
+      <h2>다음 경기</h2>
+      <div id="next-game-body"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>2026-07-03 기준 · 출처: KBO 공식 기록실 (koreabaseball.com)</p>
+  </footer>
+
+  <script src="app.js"></script>       <!-- ← 맨 아래! -->
+</body>
+</html>
