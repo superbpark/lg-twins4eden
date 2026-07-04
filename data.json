@@ -10,18 +10,17 @@
     "gamesBehind": "0"
   },
   "lastGame": {
-    "date": "2026-07-03",
+    "date": "2026-07-04",
     "opponent": "한화 이글스",
     "home": true,
-    "teamScore": 1,
-    "opponentScore": 8,
-    "result": "L",
+    "teamScore": 0,
+    "opponentScore": 0,
+    "result": "D",
     "stadium": "잠실",
-    "highlight": "홈 한화전 1-8 패배"
+    "highlight": "홈 한화전 0-0 무승부"
   },
   "recentForm": [
     "W",
-    "W",
     "L",
     "L",
     "W",
@@ -29,10 +28,11 @@
     "L",
     "W",
     "W",
-    "L"
+    "L",
+    "D"
   ],
   "nextGame": {
-    "date": "2026-07-04",
+    "date": "2026-07-05",
     "opponent": "한화 이글스",
     "home": true,
     "stadium": "잠실",
