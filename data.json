@@ -1,42 +1,42 @@
 {
   "team": "LG 트윈스",
-  "updatedAt": "2026-07-03",
+  "updatedAt": "2026-07-04",
   "season": {
     "rank": 1,
     "wins": 50,
-    "losses": 30,
+    "losses": 31,
     "draws": 0,
-    "winRate": 0.625,
+    "winRate": 0.617,
     "gamesBehind": "0"
   },
   "lastGame": {
-    "date": "2026-07-02",
-    "opponent": "키움 히어로즈",
-    "home": false,
-    "teamScore": 7,
-    "opponentScore": 5,
-    "result": "W",
-    "stadium": "고척",
-    "highlight": "원정 키움전 7-5 승리"
+    "date": "2026-07-03",
+    "opponent": "한화 이글스",
+    "home": true,
+    "teamScore": 1,
+    "opponentScore": 8,
+    "result": "L",
+    "stadium": "잠실",
+    "highlight": "홈 한화전 1-8 패배"
   },
   "recentForm": [
     "W",
     "W",
-    "W",
     "L",
     "L",
     "W",
     "L",
     "L",
     "W",
-    "W"
+    "W",
+    "L"
   ],
   "nextGame": {
-    "date": "2026-07-03",
+    "date": "2026-07-04",
     "opponent": "한화 이글스",
     "home": true,
     "stadium": "잠실",
-    "time": "18:30"
+    "time": "18:00"
   },
   "keyPlayers": [
     {
@@ -49,7 +49,7 @@
       "name": "박해민",
       "position": "타자",
       "stat": "타율",
-      "value": "0.294"
+      "value": "0.291"
     },
     {
       "name": "임찬규",
