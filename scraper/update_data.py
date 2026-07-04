@@ -61,21 +61,35 @@ def _table_rows(url):
 # ---------------------------------------------------------------------------
 # 1) 팀 순위
 # ---------------------------------------------------------------------------
-def get_season():
+def get_standings():
+    """KBO 팀 순위표 → 10개 구단 전체를 순위순 리스트로 반환."""
     rows = _table_rows(BASE + "/Record/TeamRank/TeamRank.aspx")
     header = rows[0]
+    teams = []
     for row in rows[1:]:
         rec = dict(zip(header, row))
-        if rec.get("팀명") == TEAM:
-            return {
-                "rank": int(rec["순위"]),
-                "wins": int(rec["승"]),
-                "losses": int(rec["패"]),
-                "draws": int(rec["무"]),
-                "winRate": float(rec["승률"]),
-                "gamesBehind": rec["게임차"],  # "0" 또는 "2.5" (문자열 그대로)
-                "recent10": rec.get("최근10경기", ""),
-            }
+        if not rec.get("팀명"):
+            continue
+        teams.append({
+            "rank": int(rec["순위"]),
+            "team": rec["팀명"],
+            "games": int(rec["경기"]),
+            "wins": int(rec["승"]),
+            "losses": int(rec["패"]),
+            "draws": int(rec["무"]),
+            "winRate": float(rec["승률"]),
+            "gamesBehind": rec["게임차"],  # "0" 또는 "1.5" (문자열 그대로)
+            "streak": rec.get("연속", ""),
+            "recent10": rec.get("최근10경기", ""),
+        })
+    return teams
+
+
+def get_season(standings=None):
+    """순위표에서 LG 정보를 뽑는다. standings 를 넘기면 재요청하지 않는다."""
+    for t in (standings or get_standings()):
+        if t["team"] == TEAM:
+            return t
     raise RuntimeError(f"순위표에서 {TEAM}을 찾지 못함")
 
 
@@ -194,10 +208,88 @@ def get_key_players():
 
 
 # ---------------------------------------------------------------------------
+# 5) 승·세·패 투수 (네이버 스포츠 경기기록 API — JSON, OCR 불필요)
+#    · 경기목록: schedule/games?...&fromDate&toDate  → LG 경기의 gameId
+#    · 경기기록: schedule/games/{gameId}/record      → pitchingResult[].wls (W/S/L)
+# ---------------------------------------------------------------------------
+NAVER = "https://api-gw.sports.naver.com"
+NAVER_HEADERS = {
+    "User-Agent": HEADERS["User-Agent"],
+    "Referer": "https://m.sports.naver.com/",
+}
+
+
+def _naver(url):
+    r = requests.get(url, headers=NAVER_HEADERS, timeout=20)
+    r.raise_for_status()
+    return r.json()["result"]
+
+
+# 결정적 장면으로 뽑을 기록 종류 (etcRecords 의 how 값)
+KEY_PLAY_TYPES = ("결승타", "홈런")
+
+
+def get_last_game_detail(date_iso, team_score, opp_score):
+    """해당 날짜 LG 경기의 승/세/패 투수 + 이닝별 스코어보드 + 결정적 장면을 반환.
+
+    조회 실패 시 각 값은 None/빈 값으로 둔다(지어내지 않음).
+    세이브는 세이브 상황이 아니면 실제로 기록되지 않으므로 None이 정상이다.
+    """
+    out = {"winningPitcher": None, "savePitcher": None, "losingPitcher": None,
+           "scoreBoard": None, "keyPlays": []}
+    try:
+        url = (f"{NAVER}/schedule/games?fields=basic,schedule,baseball"
+               f"&upperCategoryId=kbaseball&categoryId=kbo"
+               f"&fromDate={date_iso}&toDate={date_iso}")
+        games = [g for g in _naver(url)["games"]
+                 if TEAM in (g["homeTeamCode"], g["awayTeamCode"])
+                 and g["statusCode"] == "RESULT"]
+        if not games:
+            return out
+
+        # 더블헤더 대비: LG 득점·실점이 일치하는 경기를 우선 선택, 없으면 첫 경기
+        def lg_scores(g):
+            if g["homeTeamCode"] == TEAM:
+                return g["homeTeamScore"], g["awayTeamScore"]
+            return g["awayTeamScore"], g["homeTeamScore"]
+
+        match = next((g for g in games if lg_scores(g) == (team_score, opp_score)),
+                     games[0])
+        rd = _naver(f"{NAVER}/schedule/games/{match['gameId']}/record")["recordData"]
+
+        # 승·세·패 투수
+        by_wls = {p.get("wls"): p.get("name")
+                  for p in rd.get("pitchingResult", [])}
+        out["winningPitcher"] = by_wls.get("W")
+        out["savePitcher"] = by_wls.get("S")
+        out["losingPitcher"] = by_wls.get("L")
+
+        # 이닝별 스코어보드 (rheb = R·H·E, inn = 이닝별 득점)
+        sb = rd.get("scoreBoard") or {}
+        rheb, inn = sb.get("rheb"), sb.get("inn")
+        if rheb and inn:
+            out["scoreBoard"] = {
+                "away": {"name": match["awayTeamName"], "innings": inn.get("away", []),
+                         "r": rheb["away"]["r"], "h": rheb["away"]["h"], "e": rheb["away"]["e"]},
+                "home": {"name": match["homeTeamName"], "innings": inn.get("home", []),
+                         "r": rheb["home"]["r"], "h": rheb["home"]["h"], "e": rheb["home"]["e"]},
+            }
+
+        # 결정적 장면 (결승타·홈런)
+        out["keyPlays"] = [{"how": r["how"], "result": r["result"]}
+                           for r in rd.get("etcRecords", [])
+                           if r.get("how") in KEY_PLAY_TYPES and r.get("result")]
+    except Exception as e:
+        print("경기 상세(투수/스코어보드/결정장면) 조회 실패:", e, file=sys.stderr)
+    return out
+
+
+# ---------------------------------------------------------------------------
 # 조립
 # ---------------------------------------------------------------------------
 def build():
-    season = get_season()
+    standings = get_standings()
+    season = get_season(standings)
     games = get_games()
     key_players = get_key_players()
 
@@ -221,6 +313,12 @@ def build():
             "highlight": f"{place} {last['opponent']}전 "
                          f"{last['teamScore']}-{last['opponentScore']} {res_kr}",
         }
+        # 승·세·패 투수 + 스코어보드 + 결정적 장면 (네이버 경기기록).
+        # 실패해도 나머지 데이터는 정상 생성.
+        last_game.update(
+            get_last_game_detail(last_game["date"],
+                                 last["teamScore"], last["opponentScore"])
+        )
 
     # 다음 경기 (없으면 null → 화면에 "경기 없음")
     today = datetime.date.today()
@@ -248,6 +346,7 @@ def build():
             "winRate": season["winRate"],
             "gamesBehind": season["gamesBehind"],
         },
+        "standings": standings,
         "lastGame": last_game,
         "recentForm": recent_form,
         "nextGame": next_game,

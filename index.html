@@ -4,19 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LG 트윈스 오늘의 경기</title>
+  <!-- 세련된 영문 워드마크용 폰트 (Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- ① 헤더 -->
   <header class="header">
-    <h1>LG 트윈스</h1>
+    <div class="brand">
+      <img class="lg-mark" src="assets/emblem-primary.svg" alt="LG 트윈스 엠블럼"
+           onerror="this.onerror=null; this.src='assets/emblem-primary.png';">
+      <h1>LG Twins</h1>
+    </div>
     <p id="updated-at"></p>          <!-- ← 여기에 날짜 채움 -->
   </header>
 
   <main>
     <!-- ② 오늘의 경기 -->
     <section class="card" id="last-game">
-      <h2>최근 경기</h2>
+      <h2 id="last-game-title">최근 경기</h2>
       <div id="last-game-body"></div>  <!-- ← app.js가 채움 -->
     </section>
 

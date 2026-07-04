@@ -32,9 +32,25 @@ body {
   padding: 2rem 1.5rem;
   text-align: center;
 }
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+.lg-mark {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.35));
+}
 .header h1 {
-  font-size: 2rem;
-  letter-spacing: 1px;
+  font-family: "Montserrat", -apple-system, "Apple SD Gothic Neo", sans-serif;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 .header p {
   opacity: 0.85;
@@ -56,6 +72,7 @@ main {
   padding: 1.2rem 1.4rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   border-left: 4px solid var(--lg-red);
+  border-right: 4px solid var(--lg-red);
 }
 .card h2 {
   font-size: 1rem;
@@ -68,40 +85,268 @@ main {
   margin: 0.25rem 0;
 }
 
-/* ── 최근 경기 ── */
-.matchup {
-  color: var(--muted);
-  font-size: 0.9rem;
+/* ── 최근 경기 (가운데 정렬) ── */
+#last-game {
+  text-align: center;
 }
-.score {
+#last-game h2 {
+  text-align: center;
+}
+
+/* 스코어 라인: 원정팀 N : N 홈팀 (우측이 홈팀) */
+.scoreline {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  font-size: 1.8rem;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 0.6rem;
+}
+.scoreline .s-team {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.scoreline .s-score {          /* 팀명과 같은 크기, 색·굵기·배경으로 강조 */
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--lg-red);
+  background: #fdeaf1;
+  padding: 0.05rem 0.55rem;
+  border-radius: 8px;
+}
+.scoreline .s-colon {
+  font-size: 1.35rem;
   font-weight: 700;
-  margin: 0.5rem 0 !important;
+  color: var(--muted);
+}
+
+.result-line {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 0.9rem !important;
 }
 .result-badge {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   padding: 0.15rem 0.6rem;
   border-radius: 999px;
   color: #fff;
+  font-weight: 700;
 }
 .result-badge.W { background: var(--lg-red); }
 .result-badge.L { background: #555; }
-.highlight {
-  background: #fff5f8;
-  border-radius: 8px;
-  padding: 0.6rem 0.8rem;
-  font-size: 0.95rem;
-  margin-top: 0.6rem !important;
+.result-badge.D { background: #999; }
+
+/* 승 / 세 / 패 투수 */
+.pitchers {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+.pit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #f5f5f7;
+  border-radius: 999px;
+  padding: 0.28rem 0.75rem 0.28rem 0.3rem;
+}
+.pit-tag {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+.pit.W .pit-tag { background: var(--lg-red); }   /* 승리 투수 */
+.pit.S .pit-tag { background: #e0a400; }          /* 세이브 투수 */
+.pit.L .pit-tag { background: #555; }             /* 패전 투수 */
+.pit-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.pitchers-empty {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.88rem;
+  margin-bottom: 0.9rem !important;
 }
 
-/* ── 시즌 성적 ── */
-.rank {
-  font-size: 2rem;
-  font-weight: 800;
+/* 이닝별 스코어보드 */
+.scoreboard-wrap {
+  overflow-x: auto;
+  margin: 0 0 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+.scoreboard {
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+}
+.scoreboard th,
+.scoreboard td {
+  min-width: 1.4rem;
+  padding: 0.3rem 0.08rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+.scoreboard thead th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.74rem;
+  border-bottom: 1px solid #ddd;
+}
+.scoreboard .tname {
+  text-align: left;
+  min-width: 2.6rem;
+  padding-left: 0.15rem;
+  padding-right: 0.45rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.scoreboard td.x {
+  color: #ccc;
+}
+.scoreboard .rhe {
+  font-weight: 700;
+  background: #fafafa;
+}
+.scoreboard th.rhe {
+  background: transparent;
+}
+.scoreboard .rhe.r {
   color: var(--lg-red);
+}
+
+/* 이날의 결정적 장면 */
+.keyplays {
+  max-width: 26rem;
+  margin: 0 auto 1rem;
+  text-align: left;
+}
+.keyplays-title {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+.play {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed #eee;
+}
+.play:last-child { border-bottom: none; }
+.play-tag {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fff;
+  background: #888;
+  border-radius: 6px;
+  padding: 0.12rem 0.45rem;
+}
+.play-tag.win { background: var(--lg-red); }   /* 결승타 강조 */
+.play-text {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.highlight {
+  display: inline-block;
+  background: #fff5f8;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  margin-top: 0.2rem !important;
+}
+
+/* ── 시즌 성적 (가운데 정렬) ── */
+#season {
+  text-align: center;
+}
+#season h2 {
+  text-align: center;
+}
+.rank {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--lg-red);
+}
+.rank-suffix {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-left: 0.1rem;
+}
+.season-sum {
+  margin: 0.4rem 0 1.1rem !important;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* 리그 전체 순위표 */
+.standings-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.standings {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+}
+.standings th,
+.standings td {
+  padding: 0.45rem 0.15rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+.standings thead th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.76rem;
+  border-bottom: 1px solid #ddd;
+}
+.standings .tm {
+  text-align: left;
+  padding-left: 0.5rem;
+  font-weight: 700;
+}
+.standings .rk {
+  color: var(--muted);
+  font-weight: 700;
+}
+.standings .pct {
+  font-weight: 700;
+}
+.standings .gb {
+  color: var(--muted);
+}
+.standings tbody tr.me {
+  background: #fdeaf1;              /* LG 행 강조 */
+}
+.standings tbody tr.me td {
+  color: var(--lg-red);
+  font-weight: 800;
+}
+.standings tbody tr.me .tm::before {
+  content: "▶ ";
+  font-size: 0.7rem;
 }
 
 /* ── 최근 10경기 ── */

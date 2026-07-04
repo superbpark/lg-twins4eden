@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LG TWINS · 2026 정규시즌 1위 ⚾</title>
+<!-- 외부 자원 0개 · 데이터 내장 · 파일 하나로 어디서나 열립니다 (더블클릭 OK) -->
+<style>
+  :root{
+    --lg-red:#C30452;      /* LG 트윈스 크림슨 */
+    --lg-red-2:#E4004C;
+    --ink:#0b0b0f;
+    --ink-2:#15151d;
+    --paper:#f6f5f8;
+    --muted:#9aa0aa;
+    --gold:#f5c451;
+    --win:#2ec26b;
+    --lose:#6b7280;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',system-ui,-apple-system,sans-serif;
+    background:var(--ink);color:#fff;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  /* ===== 스크롤 스냅 무대 ===== */
+  .stage{scroll-snap-type:y mandatory;height:100vh;overflow-y:scroll;scroll-behavior:smooth}
+  .page{
+    min-height:100vh;scroll-snap-align:start;position:relative;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:88px 24px 64px;overflow:hidden;
+  }
+  .inner{width:100%;max-width:960px;position:relative;z-index:2}
+
+  /* ===== 상단 HUD ===== */
+  .hud{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 22px;
+    background:linear-gradient(180deg,rgba(11,11,15,.85),rgba(11,11,15,0));
+    backdrop-filter:blur(6px);
+  }
+  .brand{display:flex;align-items:center;gap:11px;cursor:pointer}
+  .mark{
+    width:34px;height:34px;border-radius:9px;
+    background:linear-gradient(135deg,var(--lg-red),var(--lg-red-2));
+    display:grid;place-items:center;font-weight:900;font-size:15px;letter-spacing:-1px;
+    box-shadow:0 6px 18px rgba(195,4,82,.45);
+  }
+  .brand b{font-size:16px;letter-spacing:.5px}
+  .brand span{font-size:11px;color:var(--muted);display:block;margin-top:-2px;letter-spacing:2px}
+  .rankchip{
+    display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+    padding:7px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;
+    background:rgba(255,255,255,.04)
+  }
+  .rankchip i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+
+  /* ===== 우측 네비 점 ===== */
+  .dots{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:12px}
+  .dots button{
+    width:9px;height:9px;border-radius:50%;border:0;cursor:pointer;padding:0;
+    background:rgba(255,255,255,.22);transition:.3s
+  }
+  .dots button.on{background:var(--lg-red-2);transform:scale(1.5);box-shadow:0 0 12px var(--lg-red-2)}
+
+  /* ===== 공통 등장 애니메이션 ===== */
+  .reveal{opacity:0;transform:translateY(28px);transition:.8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+  .kicker{font-size:12px;letter-spacing:4px;color:var(--lg-red-2);font-weight:800;margin-bottom:14px;text-transform:uppercase}
+
+  /* ===== 배경 장식 ===== */
+  .glow{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;z-index:1;pointer-events:none}
+  .ball{position:absolute;border-radius:50%;background:radial-gradient(circle at 32% 30%,#fff,#e7e7ea 60%,#c9c9cf);
+    box-shadow:inset -6px -6px 14px rgba(0,0,0,.15),0 12px 30px rgba(0,0,0,.4);z-index:1;pointer-events:none;opacity:.9}
+  .ball::before,.ball::after{content:"";position:absolute;top:14%;bottom:14%;width:2px;background:repeating-linear-gradient(var(--lg-red) 0 3px,transparent 3px 7px)}
+  .ball::before{left:30%;border-radius:50%;transform:rotate(18deg)}
+  .ball::after{right:30%;transform:rotate(-18deg)}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+
+  /* ===== P1 커버 ===== */
+  .cover{background:radial-gradient(120% 90% at 50% 0%,#2a0417 0%,var(--ink) 55%)}
+  .cover .glow{width:520px;height:520px;background:var(--lg-red);top:-140px;left:50%;transform:translateX(-50%)}
+  .cover .inner{text-align:center}
+  .titer{font-weight:900;line-height:.92;letter-spacing:-2px;font-size:clamp(56px,13vw,150px);
+    background:linear-gradient(180deg,#fff 30%,#ffb8d2);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subt{margin-top:10px;font-size:clamp(15px,3.4vw,22px);color:#e9c9d6;font-weight:600;letter-spacing:1px}
+  .season-badge{
+    display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:12px 22px;border-radius:999px;
+    background:linear-gradient(135deg,var(--lg-red),var(--lg-red-2));font-weight:800;font-size:15px;
+    box-shadow:0 14px 40px rgba(195,4,82,.5)
+  }
+  .scrollhint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:3px;color:var(--muted);z-index:3;animation:float 2.2s ease-in-out infinite}
+
+  /* ===== P2 시즌 성적 ===== */
+  .season{background:linear-gradient(160deg,var(--ink-2),var(--ink))}
+  .season .glow{width:400px;height:400px;background:#5a0227;right:-120px;bottom:-120px}
+  .bigstats{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:8px}
+  .stat{
+    flex:1 1 150px;min-width:140px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;padding:26px 20px;text-align:center;backdrop-filter:blur(4px)
+  }
+  .stat .num{font-size:clamp(40px,7vw,64px);font-weight:900;letter-spacing:-2px;
+    background:linear-gradient(180deg,#fff,#ffa6c6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .lab{margin-top:6px;font-size:13px;color:var(--muted);letter-spacing:1px}
+  .recordbar{margin-top:22px;height:14px;border-radius:999px;overflow:hidden;display:flex;background:rgba(255,255,255,.06)}
+  .recordbar .w{background:linear-gradient(90deg,var(--lg-red),var(--lg-red-2))}
+  .recordbar .l{background:rgba(255,255,255,.13)}
+  .rblabel{display:flex;justify-content:space-between;margin-top:9px;font-size:12px;color:var(--muted)}
+
+  /* ===== P3 최근 10경기 ===== */
+  .form{background:radial-gradient(100% 80% at 100% 100%,#26041a,var(--ink))}
+  .form .glow{width:360px;height:360px;background:var(--lg-red);left:-120px;top:-80px}
+  .pills{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:6px}
+  .pill{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-weight:900;font-size:19px;
+    transform:scale(.4);opacity:0;transition:.5s cubic-bezier(.3,1.6,.5,1)}
+  .pill.in{transform:none;opacity:1}
+  .pill.W{background:linear-gradient(135deg,var(--lg-red),var(--lg-red-2));box-shadow:0 8px 20px rgba(195,4,82,.4)}
+  .pill.L{background:rgba(255,255,255,.08);color:var(--muted);border:1px solid rgba(255,255,255,.1)}
+  .formsum{margin-top:22px;font-size:15px;color:#e9c9d6;text-align:center}
+  .formsum b{color:#fff;font-size:20px}
+
+  /* ===== P4 주요 선수 ===== */
+  .players{background:linear-gradient(200deg,var(--ink-2),#1a0410)}
+  .players .glow{width:420px;height:420px;background:#4a0220;top:50%;left:50%;transform:translate(-50%,-50%)}
+  .pcards{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:8px}
+  .pcard{
+    flex:1 1 220px;max-width:280px;border-radius:22px;padding:28px 22px;
+    background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden
+  }
+  .pcard::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(195,4,82,.18));opacity:0;transition:.4s}
+  .pcard:hover::after{opacity:1}
+  .pnum{position:absolute;top:-14px;right:6px;font-size:96px;font-weight:900;color:rgba(255,255,255,.05);line-height:1}
+  .ppos{font-size:12px;letter-spacing:2px;color:var(--lg-red-2);font-weight:800}
+  .pname{font-size:30px;font-weight:900;margin:8px 0 20px}
+  .pstat{display:flex;align-items:baseline;gap:8px}
+  .pstat .v{font-size:44px;font-weight:900;background:linear-gradient(180deg,#fff,#ffa6c6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .pstat .k{font-size:14px;color:var(--muted)}
+
+  /* ===== P5 다음 경기 ===== */
+  .next{background:radial-gradient(120% 90% at 50% 100%,#2a0417,var(--ink) 60%)}
+  .next .glow{width:480px;height:480px;background:var(--lg-red);bottom:-160px;left:50%;transform:translateX(-50%)}
+  .next .inner{text-align:center}
+  .vs{display:flex;align-items:center;justify-content:center;gap:22px;margin:14px 0 8px;flex-wrap:wrap}
+  .team{font-weight:900;font-size:clamp(24px,6vw,44px)}
+  .team.me{background:linear-gradient(180deg,#fff,#ffa6c6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .vsmark{font-size:16px;color:var(--lg-red-2);font-weight:900;letter-spacing:2px}
+  .matchmeta{margin-top:18px;display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .chip2{padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);font-size:14px;font-weight:600}
+  .footer{margin-top:34px;font-size:11px;color:var(--muted);letter-spacing:.5px}
+</style>
+</head>
+<body>
+
+<!-- 상단 HUD -->
+<div class="hud">
+  <div class="brand" onclick="goTo(0)">
+    <div class="mark">LG</div>
+    <div><b>TWINS</b><span>2026 SEASON</span></div>
+  </div>
+  <div class="rankchip"><i></i> 정규시즌 <b id="hud-rank">1위</b></div>
+</div>
+
+<!-- 우측 네비 점 -->
+<div class="dots" id="dots"></div>
+
+<div class="stage" id="stage">
+
+  <!-- P1 커버 -->
+  <section class="page cover">
+    <div class="glow"></div>
+    <div class="ball" style="width:70px;height:70px;top:22%;left:12%;animation:float 3s ease-in-out infinite"></div>
+    <div class="ball" style="width:44px;height:44px;bottom:20%;right:14%;animation:float 3.6s ease-in-out infinite .5s"></div>
+    <div class="inner">
+      <div class="reveal titer">LG<br>TWINS</div>
+      <div class="reveal subt">서울의 심장, 잠실을 지배하다</div>
+      <div class="reveal season-badge">⚾ 2026 정규시즌 <span id="cover-rank">1위</span> · 승률 <span id="cover-wr">.617</span></div>
+    </div>
+    <div class="scrollhint">SCROLL ↓</div>
+  </section>
+
+  <!-- P2 시즌 성적 -->
+  <section class="page season">
+    <div class="glow"></div>
+    <div class="inner">
+      <div class="reveal kicker">01 · Season Record</div>
+      <h2 class="reveal" style="font-size:clamp(26px,5vw,40px);font-weight:900;margin-bottom:22px">시즌 성적</h2>
+      <div class="bigstats">
+        <div class="reveal stat"><div class="num" data-count="50">0</div><div class="lab">승 (WIN)</div></div>
+        <div class="reveal stat"><div class="num" data-count="31">0</div><div class="lab">패 (LOSS)</div></div>
+        <div class="reveal stat"><div class="num" data-count="617" data-rate="1">0</div><div class="lab">승률 (PCT)</div></div>
+        <div class="reveal stat"><div class="num" data-count="1">0</div><div class="lab">순위 (RANK)</div></div>
+      </div>
+      <div class="reveal recordbar"><div class="w" id="bar-w"></div><div class="l" id="bar-l"></div></div>
+      <div class="reveal rblabel"><span>50승</span><span>81경기 · 2026.07.04 기준</span><span>31패</span></div>
+    </div>
+  </section>
+
+  <!-- P3 최근 10경기 -->
+  <section class="page form">
+    <div class="glow"></div>
+    <div class="inner">
+      <div class="reveal kicker">02 · Recent 10 Games</div>
+      <h2 class="reveal" style="font-size:clamp(26px,5vw,40px);font-weight:900;margin-bottom:22px">최근 10경기</h2>
+      <div class="pills" id="pills"></div>
+      <div class="reveal formsum">최근 10경기 <b id="form-record">5승 5패</b> · 흐름을 이어갑니다</div>
+    </div>
+  </section>
+
+  <!-- P4 주요 선수 -->
+  <section class="page players">
+    <div class="glow"></div>
+    <div class="inner">
+      <div class="reveal kicker">03 · Key Players</div>
+      <h2 class="reveal" style="font-size:clamp(26px,5vw,40px);font-weight:900;margin-bottom:22px">주요 선수</h2>
+      <div class="pcards" id="pcards"></div>
+    </div>
+  </section>
+
+  <!-- P5 다음 경기 -->
+  <section class="page next">
+    <div class="glow"></div>
+    <div class="inner">
+      <div class="reveal kicker">04 · Next Game</div>
+      <h2 class="reveal" style="font-size:clamp(26px,5vw,40px);font-weight:900">다음 경기</h2>
+      <div class="reveal vs">
+        <span class="team me">LG 트윈스</span>
+        <span class="vsmark">VS</span>
+        <span class="team" id="next-opp">한화 이글스</span>
+      </div>
+      <div class="reveal matchmeta">
+        <span class="chip2">📅 <span id="next-date">2026.07.04</span></span>
+        <span class="chip2">🏟 <span id="next-stadium">잠실</span></span>
+        <span class="chip2">🕕 <span id="next-time">18:00</span></span>
+        <span class="chip2" id="next-home">🏠 홈경기</span>
+      </div>
+      <div class="reveal footer">데이터 기준 2026-07-04 · 출처 KBO 공식 기록실 · 파일 하나로 어디서나 열리는 팬페이지</div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* ===== 데이터 내장 (기존 data.json 값을 그대로 박아넣음) ===== */
+const DATA = {
+  season:{rank:1,wins:50,losses:31,winRate:0.617},
+  recentForm:["W","W","L","L","W","L","L","W","W","L"],
+  nextGame:{date:"2026-07-04",opponent:"한화 이글스",home:true,stadium:"잠실",time:"18:00"},
+  keyPlayers:[
+    {name:"오스틴",position:"타자",stat:"홈런",value:"27"},
+    {name:"박해민",position:"타자",stat:"타율",value:"0.291"},
+    {name:"임찬규",position:"투수",stat:"평균자책",value:"3.79"}
+  ]
+};
+
+/* ---- 값 채우기 ---- */
+document.getElementById('hud-rank').textContent   = DATA.season.rank + '위';
+document.getElementById('cover-rank').textContent = DATA.season.rank + '위';
+document.getElementById('cover-wr').textContent   = DATA.season.winRate.toFixed(3).replace(/^0/,'');
+
+/* 승패 바 */
+const total = DATA.season.wins + DATA.season.losses;
+document.getElementById('bar-w').style.flex = DATA.season.wins;
+document.getElementById('bar-l').style.flex = DATA.season.losses;
+
+/* 최근 10경기 pill */
+const pillsEl = document.getElementById('pills');
+DATA.recentForm.forEach(r=>{
+  const d=document.createElement('div');
+  d.className='pill '+r; d.textContent=r; pillsEl.appendChild(d);
+});
+const w = DATA.recentForm.filter(x=>x==='W').length;
+document.getElementById('form-record').textContent = `${w}승 ${DATA.recentForm.length-w}패`;
+
+/* 선수 카드 */
+const pc = document.getElementById('pcards');
+DATA.keyPlayers.forEach(p=>{
+  const el=document.createElement('div');
+  el.className='pcard reveal';
+  el.innerHTML=`<div class="pnum">${p.value.replace('0.','.')}</div>
+    <div class="ppos">${p.position}</div>
+    <div class="pname">${p.name}</div>
+    <div class="pstat"><span class="v">${p.value.replace('0.','.')}</span><span class="k">${p.stat}</span></div>`;
+  pc.appendChild(el);
+});
+
+/* 다음 경기 */
+const ng=DATA.nextGame;
+document.getElementById('next-opp').textContent=ng.opponent;
+document.getElementById('next-date').textContent=ng.date.replace(/-/g,'.');
+document.getElementById('next-stadium').textContent=ng.stadium;
+document.getElementById('next-time').textContent=ng.time;
+document.getElementById('next-home').textContent= ng.home?'🏠 홈경기':'✈️ 원정경기';
+
+/* ===== 등장 애니메이션 (IntersectionObserver) ===== */
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show');
+      /* 카운트업 숫자 */
+      if(e.target.querySelector){
+        e.target.querySelectorAll('[data-count]').forEach(countUp);
+      }
+      if(e.target.dataset && e.target.dataset.count!==undefined) countUp(e.target);
+      /* pill 순차 등장 */
+      if(e.target.classList.contains('form')){
+        [...pillsEl.children].forEach((p,i)=>setTimeout(()=>p.classList.add('in'), i*90));
+      }
+    }
+  });
+},{threshold:.35});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.page').forEach(el=>io.observe(el));
+
+function countUp(el){
+  if(el.dataset.done) return; el.dataset.done=1;
+  const target=+el.dataset.count, rate=el.dataset.rate;
+  let cur=0; const step=Math.max(1,Math.ceil(target/40));
+  const t=setInterval(()=>{
+    cur+=step; if(cur>=target){cur=target;clearInterval(t);}
+    el.textContent = rate ? '.'+String(cur).padStart(3,'0') : cur;
+  },26);
+}
+
+/* ===== 우측 네비 점 + goTo ===== */
+const stage=document.getElementById('stage');
+const pages=[...document.querySelectorAll('.page')];
+const dots=document.getElementById('dots');
+pages.forEach((_,i)=>{
+  const b=document.createElement('button');
+  b.onclick=()=>goTo(i); dots.appendChild(b);
+});
+function goTo(i){ pages[i].scrollIntoView({behavior:'smooth'}); }
+const dotBtns=[...dots.children];
+const spy=new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting){
+    const i=pages.indexOf(e.target);
+    dotBtns.forEach((b,j)=>b.classList.toggle('on', j===i));
+  }});
+},{threshold:.6});
+pages.forEach(p=>spy.observe(p));
+</script>
+</body>
+</html>
