@@ -12,6 +12,8 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Seoul        # 서버를 한국 시간 기준으로 → updatedAt 날짜가 KST로 찍힘
     steps:
       - name: 저장소 체크아웃
         uses: actions/checkout@v4
