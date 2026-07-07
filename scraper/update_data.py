@@ -225,6 +225,27 @@ def _naver(url):
     return r.json()["result"]
 
 
+def _lg_result_games_on(date_iso):
+    """네이버 기준 해당 날짜 LG '종료(RESULT)' 경기들의 (LG득점, 상대득점) 집합.
+
+    진행 중 경기를 완료로 오인하지 않도록, '이 경기가 진짜 끝났는지' 판정에 쓴다.
+    """
+    url = (f"{NAVER}/schedule/games?fields=basic,schedule,baseball"
+           f"&upperCategoryId=kbaseball&categoryId=kbo"
+           f"&fromDate={date_iso}&toDate={date_iso}")
+    finals = set()
+    for g in _naver(url)["games"]:
+        if TEAM not in (g["homeTeamCode"], g["awayTeamCode"]):
+            continue
+        if g["statusCode"] != "RESULT" or g.get("cancel"):
+            continue
+        is_home = g["homeTeamCode"] == TEAM
+        ts = g["homeTeamScore"] if is_home else g["awayTeamScore"]
+        os_ = g["awayTeamScore"] if is_home else g["homeTeamScore"]
+        finals.add((ts, os_))
+    return finals
+
+
 # 결정적 장면으로 뽑을 기록 종류 (etcRecords 의 how 값)
 KEY_PLAY_TYPES = ("결승타", "홈런")
 
@@ -295,6 +316,20 @@ def build():
 
     done = [g for g in games if g["result"] is not None]
     upcoming = [g for g in games if g["result"] is None]
+
+    # 진행 중 경기 가드: KBO 일정은 진행 중인 오늘 경기도 (부분)점수와 함께 노출해
+    # '완료'로 오인될 수 있다. 오늘 날짜 경기는 네이버가 RESULT로 확정한 것만 인정하고,
+    # 아니면 직전 완료 경기를 최근 경기로 사용한다. (정규 08:00 KST 실행엔 영향 없음)
+    today = datetime.date.today()
+    while done and done[-1]["date"] == today:
+        g = done[-1]
+        try:
+            finals = _lg_result_games_on(g["date"].isoformat())
+        except Exception:
+            finals = None  # 네이버 조회 실패 → 판단 보류(그대로 사용)
+        if finals is None or (g["teamScore"], g["opponentScore"]) in finals:
+            break
+        done.pop()  # 오늘 경기인데 네이버 미종료 → 진행 중으로 보고 제외
 
     # 최근 경기
     last = done[-1] if done else None
