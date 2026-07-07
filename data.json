@@ -1,6 +1,6 @@
 {
   "team": "LG 트윈스",
-  "updatedAt": "2026-07-06",
+  "updatedAt": "2026-07-07",
   "season": {
     "rank": 1,
     "wins": 51,
@@ -132,65 +132,21 @@
     }
   ],
   "lastGame": {
-    "date": "2026-07-04",
-    "opponent": "한화 이글스",
-    "home": true,
-    "teamScore": 5,
-    "opponentScore": 3,
-    "result": "W",
-    "stadium": "잠실",
-    "highlight": "홈 한화전 5-3 승리",
-    "winningPitcher": "장현식",
-    "savePitcher": "리오스",
-    "losingPitcher": "에르난데스",
-    "scoreBoard": {
-      "away": {
-        "name": "한화",
-        "innings": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          3,
-          0,
-          0,
-          0
-        ],
-        "r": 3,
-        "h": 6,
-        "e": 0
-      },
-      "home": {
-        "name": "LG",
-        "innings": [
-          4,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0
-        ],
-        "r": 5,
-        "h": 9,
-        "e": 1
-      }
-    },
-    "keyPlays": [
-      {
-        "how": "결승타",
-        "result": "오스틴(1회 1사 2루서 중전 안타)"
-      },
-      {
-        "how": "홈런",
-        "result": "허인서12호(6회3점 우강훈)"
-      }
-    ]
+    "date": "2026-07-07",
+    "opponent": "삼성 라이온즈",
+    "home": false,
+    "teamScore": 0,
+    "opponentScore": 0,
+    "result": "D",
+    "stadium": "대구",
+    "highlight": "원정 삼성전 0-0 무승부",
+    "winningPitcher": null,
+    "savePitcher": null,
+    "losingPitcher": null,
+    "scoreBoard": null,
+    "keyPlays": []
   },
   "recentForm": [
-    "W",
     "L",
     "L",
     "W",
@@ -199,10 +155,11 @@
     "W",
     "W",
     "L",
-    "W"
+    "W",
+    "D"
   ],
   "nextGame": {
-    "date": "2026-07-07",
+    "date": "2026-07-08",
     "opponent": "삼성 라이온즈",
     "home": false,
     "stadium": "대구",
