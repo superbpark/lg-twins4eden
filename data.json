@@ -1,62 +1,62 @@
 {
   "team": "LG 트윈스",
-  "updatedAt": "2026-07-08",
+  "updatedAt": "2026-07-09",
   "season": {
-    "rank": 2,
-    "wins": 51,
+    "rank": 1,
+    "wins": 52,
     "losses": 32,
     "draws": 0,
-    "winRate": 0.614,
+    "winRate": 0.619,
     "gamesBehind": "0"
   },
   "standings": [
     {
       "rank": 1,
-      "team": "삼성",
-      "games": 83,
-      "wins": 50,
-      "losses": 31,
-      "draws": 2,
-      "winRate": 0.617,
+      "team": "LG",
+      "games": 84,
+      "wins": 52,
+      "losses": 32,
+      "draws": 0,
+      "winRate": 0.619,
       "gamesBehind": "0",
-      "streak": "5승",
-      "recent10": "9승0무1패"
+      "streak": "1승",
+      "recent10": "5승0무5패"
     },
     {
       "rank": 2,
-      "team": "LG",
-      "games": 83,
-      "wins": 51,
+      "team": "삼성",
+      "games": 84,
+      "wins": 50,
       "losses": 32,
-      "draws": 0,
-      "winRate": 0.614,
-      "gamesBehind": "0",
+      "draws": 2,
+      "winRate": 0.61,
+      "gamesBehind": "1",
       "streak": "1패",
-      "recent10": "4승0무6패"
+      "recent10": "8승0무2패"
     },
     {
       "rank": 3,
       "team": "KT",
-      "games": 82,
-      "wins": 46,
+      "games": 83,
+      "wins": 47,
       "losses": 35,
       "draws": 1,
-      "winRate": 0.568,
+      "winRate": 0.573,
       "gamesBehind": "4",
-      "streak": "2승",
+      "streak": "3승",
       "recent10": "4승0무6패"
     },
     {
       "rank": 4,
       "team": "KIA",
-      "games": 84,
+      "games": 85,
       "wins": 44,
-      "losses": 38,
+      "losses": 39,
       "draws": 2,
-      "winRate": 0.537,
-      "gamesBehind": "6.5",
-      "streak": "3패",
-      "recent10": "4승1무5패"
+      "winRate": 0.53,
+      "gamesBehind": "7.5",
+      "streak": "4패",
+      "recent10": "3승1무6패"
     },
     {
       "rank": 5,
@@ -66,7 +66,7 @@
       "losses": 41,
       "draws": 2,
       "winRate": 0.512,
-      "gamesBehind": "8.5",
+      "gamesBehind": "9",
       "streak": "1승",
       "recent10": "6승0무4패"
     },
@@ -78,7 +78,7 @@
       "losses": 40,
       "draws": 2,
       "winRate": 0.494,
-      "gamesBehind": "10",
+      "gamesBehind": "10.5",
       "streak": "2패",
       "recent10": "5승0무5패"
     },
@@ -90,20 +90,20 @@
       "losses": 41,
       "draws": 1,
       "winRate": 0.488,
-      "gamesBehind": "10.5",
+      "gamesBehind": "11",
       "streak": "3승",
       "recent10": "7승0무3패"
     },
     {
       "rank": 8,
       "team": "롯데",
-      "games": 83,
-      "wins": 37,
+      "games": 84,
+      "wins": 38,
       "losses": 44,
       "draws": 2,
-      "winRate": 0.457,
+      "winRate": 0.463,
       "gamesBehind": "13",
-      "streak": "1승",
+      "streak": "2승",
       "recent10": "6승0무4패"
     },
     {
@@ -114,43 +114,60 @@
       "losses": 51,
       "draws": 3,
       "winRate": 0.378,
-      "gamesBehind": "19.5",
+      "gamesBehind": "20",
       "streak": "1패",
       "recent10": "1승1무8패"
     },
     {
       "rank": 10,
       "team": "키움",
-      "games": 86,
+      "games": 87,
       "wins": 29,
-      "losses": 56,
+      "losses": 57,
       "draws": 1,
-      "winRate": 0.341,
-      "gamesBehind": "23",
-      "streak": "3패",
+      "winRate": 0.337,
+      "gamesBehind": "24",
+      "streak": "4패",
       "recent10": "3승0무7패"
     }
   ],
   "lastGame": {
-    "date": "2026-07-07",
+    "date": "2026-07-08",
     "opponent": "삼성 라이온즈",
     "home": false,
-    "teamScore": 2,
-    "opponentScore": 9,
-    "result": "L",
+    "teamScore": 8,
+    "opponentScore": 2,
+    "result": "W",
     "stadium": "대구",
-    "highlight": "원정 삼성전 2-9 패배",
-    "winningPitcher": "후라도",
+    "highlight": "원정 삼성전 8-2 승리",
+    "winningPitcher": "임찬규",
     "savePitcher": null,
-    "losingPitcher": "톨허스트",
+    "losingPitcher": "오러클린",
     "scoreBoard": {
       "away": {
         "name": "LG",
         "innings": [
           0,
           0,
+          2,
+          3,
           0,
           2,
+          0,
+          1,
+          0
+        ],
+        "r": 8,
+        "h": 14,
+        "e": 0
+      },
+      "home": {
+        "name": "삼성",
+        "innings": [
+          2,
+          0,
+          0,
+          0,
           0,
           0,
           0,
@@ -158,85 +175,69 @@
           0
         ],
         "r": 2,
-        "h": 8,
-        "e": 1
-      },
-      "home": {
-        "name": "삼성",
-        "innings": [
-          0,
-          0,
-          0,
-          0,
-          4,
-          0,
-          2,
-          3
-        ],
-        "r": 9,
-        "h": 15,
-        "e": 1
+        "h": 7,
+        "e": 0
       }
     },
     "keyPlays": [
       {
         "how": "결승타",
-        "result": "류지혁(5회 2사 2,3루서 2루수 안타)"
+        "result": "이재원(4회 2사 1루서 좌중간 2루타)"
       },
       {
         "how": "홈런",
-        "result": "박동원9호(4회2점 후라도) 디아즈16호(8회2점 이정용)"
+        "result": "최형우12호(1회2점 임찬규) 문정빈7호(8회1점 이승현)"
       }
     ]
   },
   "recentForm": [
     {
       "result": "L",
+      "opponent": "롯데",
+      "home": false
+    },
+    {
+      "result": "W",
+      "opponent": "롯데",
+      "home": false
+    },
+    {
+      "result": "L",
+      "opponent": "롯데",
+      "home": false
+    },
+    {
+      "result": "L",
+      "opponent": "키움",
+      "home": false
+    },
+    {
+      "result": "W",
+      "opponent": "키움",
+      "home": false
+    },
+    {
+      "result": "W",
+      "opponent": "키움",
+      "home": false
+    },
+    {
+      "result": "L",
+      "opponent": "한화",
+      "home": true
+    },
+    {
+      "result": "W",
+      "opponent": "한화",
+      "home": true
+    },
+    {
+      "result": "L",
       "opponent": "삼성",
-      "home": true
-    },
-    {
-      "result": "L",
-      "opponent": "롯데",
       "home": false
     },
     {
       "result": "W",
-      "opponent": "롯데",
-      "home": false
-    },
-    {
-      "result": "L",
-      "opponent": "롯데",
-      "home": false
-    },
-    {
-      "result": "L",
-      "opponent": "키움",
-      "home": false
-    },
-    {
-      "result": "W",
-      "opponent": "키움",
-      "home": false
-    },
-    {
-      "result": "W",
-      "opponent": "키움",
-      "home": false
-    },
-    {
-      "result": "L",
-      "opponent": "한화",
-      "home": true
-    },
-    {
-      "result": "W",
-      "opponent": "한화",
-      "home": true
-    },
-    {
-      "result": "L",
       "opponent": "삼성",
       "home": false
     }
@@ -259,13 +260,13 @@
       "title": "도루왕",
       "name": "박해민",
       "stat": "도루",
-      "value": "23"
+      "value": "24"
     },
     {
       "title": "다승",
       "name": "임찬규",
       "stat": "승",
-      "value": "8"
+      "value": "9"
     },
     {
       "title": "세이브왕",
