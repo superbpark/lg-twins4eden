@@ -2,8 +2,14 @@ name: LG 데이터 자동 갱신
 
 on:
   schedule:
-    # 매일 23:00 UTC = 한국시간(KST) 아침 08:00
-    - cron: "0 23 * * *"
+    # GitHub 스케줄 크론은 지연/누락이 잦아 하루 여러 번 실행한다.
+    # data.json은 "변경 있을 때만 커밋"이라 중복 실행은 대부분 no-op → 비용/부작용 거의 없음.
+    # 표기는 UTC (KST = UTC+9).
+    - cron: "0 23 * * *"    # 08:00 KST — 아침 갱신
+    - cron: "0 3 * * *"     # 12:00 KST — 점심
+    - cron: "0 9 * * *"     # 18:00 KST — 저녁(경기 전)
+    - cron: "0 14 * * *"    # 23:00 KST — 경기 종료 직후
+    - cron: "30 15 * * *"   # 00:30 KST — 늦게 끝난 경기 대비
   workflow_dispatch: {}   # 깃허브에서 수동 실행 버튼도 제공
 
 permissions:
