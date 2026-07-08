@@ -171,40 +171,65 @@ def get_games():
 
 
 # ---------------------------------------------------------------------------
-# 3) & 4) 선수 기록
+# 3) & 4) 주요 선수 — 부문별 '타이틀홀더' (네이버 시즌기록: 전체 로스터)
+#    KBO 규정 리더보드엔 규정 미달 선수(마무리 투수 등)가 빠지고 도루 컬럼도
+#    없어서, 도루왕·세이브왕까지 담으려면 전체 로스터가 필요 → 네이버 시즌기록 사용.
+#    엔드포인트: statistics/categories/kbo/seasons/{year}/players?playerType=HITTER|PITCHER
 # ---------------------------------------------------------------------------
-def _lg_players(url):
-    rows = _table_rows(url)
-    header = rows[0]
-    return [dict(zip(header, r)) for r in rows[1:] if dict(zip(header, r)).get("팀명") == TEAM]
+KEY_PLAYER_CATEGORIES = [
+    ("홈런왕", "HITTER", "hitterHr", "홈런"),
+    ("도루왕", "HITTER", "hitterSb", "도루"),
+    ("다승", "PITCHER", "pitcherWin", "승"),
+    ("세이브왕", "PITCHER", "pitcherSave", "세이브"),
+    ("탈삼진왕", "PITCHER", "pitcherKk", "탈삼진"),
+    ("타점왕", "HITTER", "hitterRbi", "타점"),
+    ("최다안타", "HITTER", "hitterHit", "안타"),
+]
 
 
-def get_key_players():
-    hitters = _lg_players(BASE + "/Record/Player/HitterBasic/Basic1.aspx")
-    pitchers = _lg_players(BASE + "/Record/Player/PitcherBasic/Basic1.aspx")
-    players = []
-    picked = set()
+def _lg_roster(player_type):
+    """네이버 시즌기록에서 LG 전체 선수(playerId로 중복 제거). player_type: HITTER/PITCHER."""
+    url = (f"{NAVER}/statistics/categories/kbo/seasons/{SEASON}/players"
+           f"?playerType={player_type}&pageSize=500")
+    lg = {}
+    for p in _naver(url)["seasonPlayerStats"]:
+        if p.get("teamName") == TEAM:
+            lg[p["playerId"]] = p
+    return list(lg.values())
 
-    # 홈런 1위 타자
-    if hitters:
-        hr = max(hitters, key=lambda p: int(p["HR"]))
-        players.append({"name": hr["선수명"], "position": "타자",
-                        "stat": "홈런", "value": hr["HR"]})
-        picked.add(hr["선수명"])
 
-    # 타율 1위 타자 (홈런 1위와 다른 사람)
-    for p in sorted(hitters, key=lambda p: float(p["AVG"]), reverse=True):
-        if p["선수명"] not in picked:
-            players.append({"name": p["선수명"], "position": "타자",
-                            "stat": "타율", "value": p["AVG"]})
+def get_key_players(limit=5):
+    """부문 1위(타이틀홀더)를 서로 다른 선수로 최대 limit명 선정.
+
+    한 선수가 여러 부문 1위여도(예: 오스틴=홈런·타점·타율) 대표 1개만 부여하고,
+    이미 뽑힌 선수의 부문은 건너뛰어 여러 스타가 골고루 나오게 한다.
+    """
+    pool = {"HITTER": _lg_roster("HITTER"), "PITCHER": _lg_roster("PITCHER")}
+
+    def num(v):
+        try:
+            return float(v)
+        except (TypeError, ValueError):
+            return -1.0
+
+    used, picked = set(), []
+    for title, side, key, unit in KEY_PLAYER_CATEGORIES:
+        cand = [p for p in pool[side] if num(p.get(key)) >= 0]
+        if not cand:
+            continue
+        top = max(cand, key=lambda p: num(p.get(key)))
+        if top["playerId"] in used:
+            continue
+        used.add(top["playerId"])
+        picked.append({
+            "title": title,
+            "name": top["playerName"],
+            "stat": unit,
+            "value": str(int(num(top.get(key)))),
+        })
+        if len(picked) >= limit:
             break
-
-    # 평균자책 1위 투수
-    if pitchers:
-        era = min(pitchers, key=lambda p: float(p["ERA"]))
-        players.append({"name": era["선수명"], "position": "투수",
-                        "stat": "평균자책", "value": era["ERA"]})
-    return players
+    return picked
 
 
 # ---------------------------------------------------------------------------
@@ -368,7 +393,10 @@ def build():
             "time": nxt["time"],
         }
 
-    recent_form = [g["result"] for g in done[-10:]]
+    recent_form = [
+        {"result": g["result"], "opponent": g["opponent"], "home": g["home"]}
+        for g in done[-10:]
+    ]
 
     data = {
         "team": TEAM_FULL,

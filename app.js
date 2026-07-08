@@ -15,10 +15,16 @@ async function loadData() {
 
 // ① 헤더: 갱신 날짜
 function renderHeader(data) {
-  const box = document.getElementById("updated-at");
-  // "2026-07-04" → "26.07.04 기준"
+  // "2026-07-04" → "26.07.04"
   const [y, m, d] = data.updatedAt.split("-");
-  box.textContent = `${y.slice(2)}.${m}.${d} 기준`;
+  const short = `${y.slice(2)}.${m}.${d}`;
+  document.getElementById("updated-at").textContent = `${short} 기준`;
+
+  // 푸터: 기준일(데이터 기반) + 출처
+  const footer = document.getElementById("footer-note");
+  if (footer) {
+    footer.textContent = `${short} 기준 · 출처: KBO 공식 기록실 · 네이버 스포츠`;
+  }
 }
 
 // 이닝별 스코어보드 (원정=위, 홈=아래). 홈팀이 앞서 마지막 회 공격을 안 하면 "X"
@@ -141,43 +147,74 @@ function standingsHtml(teams) {
 // ③ 시즌 성적 — LG 히어로 + 리그 전체 순위표
 function renderSeason(season, standings) {
   const box = document.getElementById("season-body");
-  const pct = season.winRate.toFixed(3).replace(/^0/, "");        // .622
-  const gb = season.gamesBehind === "0" ? "선두" : `${season.gamesBehind} 게임차`;
+  const pct = season.winRate.toFixed(3).replace(/^0/, "");        // .614
   box.innerHTML = `
     <p class="rank">${season.rank}<span class="rank-suffix">위</span></p>
-    <p class="season-sum">${season.wins}승 ${season.losses}패 ${season.draws}무 · 승률 ${pct} · ${gb}</p>
+    <p class="season-sum">${season.wins}승 ${season.losses}패 ${season.draws}무 · 승률 ${pct}</p>
     ${standingsHtml(standings)}
   `;
 }
 
-// ④ 최근 경기 흐름 — 배열을 반복해서 승/패 원으로 그림
+// ④ 최근 10경기 — 승/패 아래 상대팀 표기(vs=홈, @=원정) + 제목에 승패무 합계
 function renderRecentForm(form) {
   const box = document.getElementById("recent-form-body");
+  const title = document.getElementById("recent-form-title");
 
   // 데이터가 없으면 정직하게 안내 (지어내지 않음)
   if (!form || form.length === 0) {
+    if (title) title.textContent = "최근 10경기";
     box.innerHTML = `<p class="empty">확인된 데이터가 없습니다</p>`;
     return;
   }
 
-  const dots = form
-    .map((r) => `<span class="dot ${r}">${r === "W" ? "승" : "패"}</span>`)
+  // 구형("W")·신형({result,opponent,home}) 형식 모두 지원
+  const games = form.map((g) => (typeof g === "string" ? { result: g } : g));
+
+  // 제목에 승패무 합계: "최근 10경기 (4승 6패)"
+  const w = games.filter((g) => g.result === "W").length;
+  const l = games.filter((g) => g.result === "L").length;
+  const d = games.filter((g) => g.result === "D").length;
+  if (title) {
+    title.textContent = `최근 10경기 (${w}승 ${l}패${d ? ` ${d}무` : ""})`;
+  }
+
+  const kr = (r) => (r === "W" ? "승" : r === "L" ? "패" : "무");
+  const cells = games
+    .map((g) => {
+      const label = g.opponent ? `${g.home ? "vs" : "@"}${g.opponent}` : "";
+      return `<div class="game">
+        <span class="dot ${g.result}">${kr(g.result)}</span>
+        ${label ? `<span class="vs">${label}</span>` : ""}
+      </div>`;
+    })
     .join("");
-  box.innerHTML = `<div class="form-row">${dots}</div>`;
+  box.innerHTML = `<div class="form-row">${cells}</div>`;
 }
 
-// ⑤ 주요 선수 — 선수 배열을 반복
+// ⑤ 주요 선수 — 부문별 타이틀홀더 (🏆 홈런왕 · 오스틴 · 27홈런)
+const TITLE_EMOJI = {
+  "홈런왕": "🏆", "도루왕": "⚡", "다승": "🔥",
+  "세이브왕": "🧤", "탈삼진왕": "⚾", "타점왕": "💥", "최다안타": "🎯",
+};
 function renderKeyPlayers(players) {
   const box = document.getElementById("key-players-body");
+
+  if (!players || !players.length) {
+    box.innerHTML = `<p class="empty">확인된 데이터가 없습니다</p>`;
+    return;
+  }
+
   const rows = players
-    .map(
-      (p) => `
-        <div class="player">
-          <span class="player-name">${p.name}</span>
-          <span class="player-pos">${p.position}</span>
-          <span class="player-stat">${p.stat} ${p.value}</span>
-        </div>`
-    )
+    .map((p) => {
+      // 신형({title,name,stat,value})·구형({name,position,stat,value}) 모두 지원
+      const title = p.title || p.stat || "";
+      const em = TITLE_EMOJI[title] || "⭐";
+      return `<div class="tholder">
+        <span class="tt">${em} ${title}</span>
+        <span class="tn">${p.name}</span>
+        <span class="tv">${p.value}<span class="tu">${p.stat}</span></span>
+      </div>`;
+    })
     .join("");
   box.innerHTML = rows;
 }

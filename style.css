@@ -352,8 +352,14 @@ main {
 /* ── 최근 10경기 ── */
 .form-row {
   display: flex;
-  gap: 0.4rem;
+  gap: 0.55rem;
   flex-wrap: wrap;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
 }
 .dot {
   width: 2rem;
@@ -368,25 +374,49 @@ main {
 }
 .dot.W { background: var(--lg-red); }
 .dot.L { background: #bbb; }
+.dot.D { background: #ccc; }
+.vs {
+  font-size: 0.72rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
 
-/* ── 주요 선수 ── */
-.player {
+/* ── 주요 선수 (부문별 타이틀홀더) ── */
+.tholder {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.6rem 0;
+  gap: 0.7rem;
+  padding: 0.7rem 0;
   border-bottom: 1px solid #f0f0f0;
 }
-.player:last-child { border-bottom: none; }
-.player-name { font-weight: 700; min-width: 4rem; }
-.player-pos {
-  font-size: 0.8rem;
-  color: var(--muted);
-  background: #f2f2f4;
-  padding: 0.1rem 0.5rem;
+.tholder:last-child { border-bottom: none; }
+.tt {
+  flex-shrink: 0;
+  min-width: 5rem;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--lg-red);
   border-radius: 999px;
+  padding: 0.32rem 0.7rem;
 }
-.player-stat { margin-left: auto; font-weight: 600; }
+.tn {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+.tv {
+  margin-left: auto;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--lg-red);
+}
+.tu {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-left: 0.15rem;
+}
 
 /* ── 데이터 없음 상태 ── */
 .empty {
