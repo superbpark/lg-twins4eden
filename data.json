@@ -193,52 +193,92 @@
     {
       "result": "W",
       "opponent": "롯데",
-      "home": false
+      "home": false,
+      "date": "2026-06-27",
+      "stadium": "사직",
+      "teamScore": 8,
+      "opponentScore": 7
     },
     {
       "result": "L",
       "opponent": "롯데",
-      "home": false
+      "home": false,
+      "date": "2026-06-28",
+      "stadium": "사직",
+      "teamScore": 9,
+      "opponentScore": 11
     },
     {
       "result": "L",
       "opponent": "키움",
-      "home": false
+      "home": false,
+      "date": "2026-06-30",
+      "stadium": "고척",
+      "teamScore": 0,
+      "opponentScore": 6
     },
     {
       "result": "W",
       "opponent": "키움",
-      "home": false
+      "home": false,
+      "date": "2026-07-01",
+      "stadium": "고척",
+      "teamScore": 10,
+      "opponentScore": 4
     },
     {
       "result": "W",
       "opponent": "키움",
-      "home": false
+      "home": false,
+      "date": "2026-07-02",
+      "stadium": "고척",
+      "teamScore": 7,
+      "opponentScore": 5
     },
     {
       "result": "L",
       "opponent": "한화",
-      "home": true
+      "home": true,
+      "date": "2026-07-03",
+      "stadium": "잠실",
+      "teamScore": 1,
+      "opponentScore": 8
     },
     {
       "result": "W",
       "opponent": "한화",
-      "home": true
+      "home": true,
+      "date": "2026-07-04",
+      "stadium": "잠실",
+      "teamScore": 5,
+      "opponentScore": 3
     },
     {
       "result": "L",
       "opponent": "삼성",
-      "home": false
+      "home": false,
+      "date": "2026-07-07",
+      "stadium": "대구",
+      "teamScore": 2,
+      "opponentScore": 9
     },
     {
       "result": "W",
       "opponent": "삼성",
-      "home": false
+      "home": false,
+      "date": "2026-07-08",
+      "stadium": "대구",
+      "teamScore": 8,
+      "opponentScore": 2
     },
     {
       "result": "L",
       "opponent": "삼성",
-      "home": false
+      "home": false,
+      "date": "2026-07-09",
+      "stadium": "대구",
+      "teamScore": 5,
+      "opponentScore": 6
     }
   ],
   "nextGame": {

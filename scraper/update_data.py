@@ -394,7 +394,9 @@ def build():
         }
 
     recent_form = [
-        {"result": g["result"], "opponent": g["opponent"], "home": g["home"]}
+        {"result": g["result"], "opponent": g["opponent"], "home": g["home"],
+         "date": g["date"].isoformat(), "stadium": g["stadium"],
+         "teamScore": g["teamScore"], "opponentScore": g["opponentScore"]}
         for g in done[-10:]
     ]
 

@@ -380,6 +380,54 @@ main {
   color: var(--muted);
   white-space: nowrap;
 }
+.vs .ha {                          /* (H)/(A) 홈·원정 표기 */
+  font-weight: 700;
+  color: var(--lg-red);
+}
+.vs .ha.away { color: #999; }      /* 원정은 회색으로 톤 다운 */
+
+/* 경기 칸 = 툴팁 트리거 */
+.game {
+  position: relative;
+  cursor: pointer;
+}
+.game .tip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: #2a2a2a;
+  color: #fff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+.game .tip::after {                /* 말풍선 꼬리 */
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #2a2a2a;
+}
+.game .tip .tip-score { font-weight: 800; font-size: 0.85rem; }
+.game .tip .tip-win  { color: #ff6b9d; }
+.game .tip .tip-lose { color: #bbb; }
+.game:hover .tip,
+.game.show-tip .tip {              /* 데스크톱 호버 · 모바일 탭 */
+  opacity: 1;
+  visibility: visible;
+}
 
 /* ── 주요 선수 (부문별 타이틀홀더) ── */
 .tholder {

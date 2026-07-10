@@ -4,7 +4,8 @@
 
 // data.json을 읽어서 자바스크립트 객체로 돌려주는 함수
 async function loadData() {
-  const response = await fetch("data.json");  // ① 파일 요청 (기다림)
+  // 매일 갱신되는 파일이라 캐시를 막아 항상 최신본을 받는다
+  const response = await fetch("data.json", { cache: "no-store" });  // ① 파일 요청 (기다림)
   const data = await response.json();          // ② 텍스트 → JS 객체로 변환 (기다림)
   return data;                                 // ③ 완성된 데이터 반환
 }
@@ -155,7 +156,8 @@ function renderSeason(season, standings) {
   `;
 }
 
-// ④ 최근 10경기 — 승/패 아래 상대팀 표기(vs=홈, @=원정) + 제목에 승패무 합계
+// ④ 최근 10경기 — 상대팀 (H/A) 표기 + 제목에 승패무 합계
+//    각 칸에 커서를 올리면(모바일은 탭) 날짜·점수·구장 툴팁이 뜬다.
 function renderRecentForm(form) {
   const box = document.getElementById("recent-form-body");
   const title = document.getElementById("recent-form-title");
@@ -167,7 +169,7 @@ function renderRecentForm(form) {
     return;
   }
 
-  // 구형("W")·신형({result,opponent,home}) 형식 모두 지원
+  // 구형("W")·신형({result,opponent,home,...}) 형식 모두 지원
   const games = form.map((g) => (typeof g === "string" ? { result: g } : g));
 
   // 제목에 승패무 합계: "최근 10경기 (4승 6패)"
@@ -181,14 +183,52 @@ function renderRecentForm(form) {
   const kr = (r) => (r === "W" ? "승" : r === "L" ? "패" : "무");
   const cells = games
     .map((g) => {
-      const label = g.opponent ? `${g.home ? "vs" : "@"}${g.opponent}` : "";
-      return `<div class="game">
+      const label = g.opponent
+        ? `${g.opponent} <span class="ha ${g.home ? "" : "away"}">(${g.home ? "H" : "A"})</span>`
+        : "";
+      return `<div class="game" tabindex="0">
         <span class="dot ${g.result}">${kr(g.result)}</span>
         ${label ? `<span class="vs">${label}</span>` : ""}
+        ${gameTooltip(g)}
       </div>`;
     })
     .join("");
   box.innerHTML = `<div class="form-row">${cells}</div>`;
+
+  // 모바일(호버 없음) 대응: 탭하면 툴팁 토글, 다른 칸을 누르면 닫힘
+  box.querySelectorAll(".game").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const wasOpen = el.classList.contains("show-tip");
+      box.querySelectorAll(".game.show-tip").forEach((o) => o.classList.remove("show-tip"));
+      if (!wasOpen) el.classList.add("show-tip");
+    });
+  });
+  document.addEventListener("click", () => {
+    box.querySelectorAll(".game.show-tip").forEach((o) => o.classList.remove("show-tip"));
+  });
+}
+
+// 툴팁: "6/27 · 롯데 원정 · 사직  8:7 승" (점수 없으면 있는 정보만)
+function gameTooltip(g) {
+  if (g.teamScore == null || g.opponentScore == null) {
+    // 상세 점수가 없는 구형 데이터는 툴팁 생략
+    if (!g.date && !g.stadium) return "";
+  }
+  const md = g.date
+    ? g.date.slice(5).split("-").map((n) => +n).join("/")   // "07-01" → "7/1"
+    : "";
+  const where = g.opponent ? `${g.opponent} ${g.home ? "홈" : "원정"}` : "";
+  const line1 = [md, where, g.stadium].filter(Boolean).join(" · ");
+
+  let line2 = "";
+  if (g.teamScore != null && g.opponentScore != null) {
+    const won = g.result === "W";
+    const rk = won ? "승" : g.result === "L" ? "패" : "무";
+    const cls = won ? "tip-win" : g.result === "L" ? "tip-lose" : "";
+    line2 = `<div class="tip-score">LG ${g.teamScore} : ${g.opponentScore} <span class="${cls}">${rk}</span></div>`;
+  }
+  return `<span class="tip">${line1 ? `<div>${line1}</div>` : ""}${line2}</span>`;
 }
 
 // ⑤ 주요 선수 — 부문별 타이틀홀더 (🏆 홈런왕 · 오스틴 · 27홈런)
