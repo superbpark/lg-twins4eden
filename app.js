@@ -231,11 +231,47 @@ function gameTooltip(g) {
   return `<span class="tip">${line1 ? `<div>${line1}</div>` : ""}${line2}</span>`;
 }
 
-// ⑤ 주요 선수 — 부문별 타이틀홀더 (🏆 홈런왕 · 오스틴 · 27홈런)
-const TITLE_EMOJI = {
-  "홈런왕": "🏆", "도루왕": "⚡", "다승": "🔥",
-  "세이브왕": "🧤", "탈삼진왕": "⚾", "타점왕": "💥", "최다안타": "🎯",
+// ⑤ 주요 선수 — 부문별 타이틀홀더 (⚾ 홈런왕 · 오스틴 · 27홈런)
+//    부문 아이콘은 Tabler Icons(MIT)의 라인 SVG를 인라인으로 담아 외부 요청 없이
+//    오프라인·다크모드까지 대응한다. 알약(빨강) 안에 흰색으로 표시된다.
+const TITLE_ICON_PATHS = {
+  홈런왕: [  // 야구공
+    "M5.636 18.364a9 9 0 1 0 12.728 -12.728a9 9 0 0 0 -12.728 12.728",
+    "M12.495 3.02a9 9 0 0 1 -9.475 9.475", "M20.98 11.505a9 9 0 0 0 -9.475 9.475",
+    "M9 9l2 2", "M13 13l2 2", "M11 7l2 1", "M7 11l1 2", "M16 11l1 2", "M11 16l2 1",
+  ],
+  타율왕: [  // 과녁+화살 (정확도)
+    "M11 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0", "M12 7a5 5 0 1 0 5 5",
+    "M13 3.055a9 9 0 1 0 7.941 7.945", "M15 6v3h3l3 -3h-3v-3l-3 3", "M15 9l-3 3",
+  ],
+  도루왕: [  // 달리는 사람 (스피드)
+    "M11.007 5a2 2 0 1 0 4 0a2 2 0 1 0 -4 0", "M4 17l5 1l.75 -1.5",
+    "M15 21v-4l-4 -3l1 -6", "M7 12v-3l5 -1l3 3l3 1",
+  ],
+  다승왕: [  // 트로피
+    "M8 21l8 0", "M12 17l0 4", "M7 4l10 0", "M17 4v8a5 5 0 0 1 -10 0v-8",
+    "M3 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0", "M17 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0",
+  ],
+  방어율왕: [  // 방패+체크 (실점 방어)
+    "M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06",
+    "M15 19l2 2l4 -4",
+  ],
+  세이브왕: [  // 멈춤 손 (경기 문 닫기)
+    "M8 13v-7.5a1.5 1.5 0 0 1 3 0v6.5", "M11 5.5v-2a1.5 1.5 0 1 1 3 0v8.5",
+    "M14 5.5a1.5 1.5 0 0 1 3 0v6.5",
+    "M17 7.5a1.5 1.5 0 0 1 3 0v8.5a6 6 0 0 1 -6 6h-2h.208a6 6 0 0 1 -5.012 -2.7a69.74 69.74 0 0 1 -.196 -.3c-.312 -.479 -1.407 -2.388 -3.286 -5.728a1.5 1.5 0 0 1 .536 -2.022a1.867 1.867 0 0 1 2.28 .28l1.47 1.47",
+  ],
 };
+// 구형 타이틀 호환: 새 부문 아이콘으로 매핑 (없으면 트로피)
+const TITLE_ICON_ALIAS = { 다승: "다승왕", 탈삼진왕: "다승왕", 타점왕: "홈런왕", 최다안타: "타율왕" };
+
+function titleIcon(title) {
+  const key = TITLE_ICON_PATHS[title] ? title : (TITLE_ICON_ALIAS[title] || "다승왕");
+  const paths = TITLE_ICON_PATHS[key].map((d) => `<path d="${d}" />`).join("");
+  return `<svg class="tt-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+}
+
 function renderKeyPlayers(players) {
   const box = document.getElementById("key-players-body");
 
@@ -248,9 +284,8 @@ function renderKeyPlayers(players) {
     .map((p) => {
       // 신형({title,name,stat,value})·구형({name,position,stat,value}) 모두 지원
       const title = p.title || p.stat || "";
-      const em = TITLE_EMOJI[title] || "⭐";
       return `<div class="tholder">
-        <span class="tt">${em} ${title}</span>
+        <span class="tt">${titleIcon(title)}${title}</span>
         <span class="tn">${p.name}</span>
         <span class="tv">${p.value}<span class="tu">${p.stat}</span></span>
       </div>`;

@@ -176,15 +176,26 @@ def get_games():
 #    없어서, 도루왕·세이브왕까지 담으려면 전체 로스터가 필요 → 네이버 시즌기록 사용.
 #    엔드포인트: statistics/categories/kbo/seasons/{year}/players?playerType=HITTER|PITCHER
 # ---------------------------------------------------------------------------
+# (표기, 타자/투수, 네이버키, 단위, 규정타석·이닝 충족자만, 낮을수록 1위)
+#  · 타율(hitterHra)·방어율(pitcherEra)은 규정 미달 선수의 소표본 착시를 막으려
+#    isQualified=True인 선수만 대상으로 한다. 방어율은 값이 낮을수록 1위.
 KEY_PLAYER_CATEGORIES = [
-    ("홈런왕", "HITTER", "hitterHr", "홈런"),
-    ("도루왕", "HITTER", "hitterSb", "도루"),
-    ("다승", "PITCHER", "pitcherWin", "승"),
-    ("세이브왕", "PITCHER", "pitcherSave", "세이브"),
-    ("탈삼진왕", "PITCHER", "pitcherKk", "탈삼진"),
-    ("타점왕", "HITTER", "hitterRbi", "타점"),
-    ("최다안타", "HITTER", "hitterHit", "안타"),
+    ("홈런왕",   "HITTER",  "hitterHr",    "홈런",   False, False),
+    ("타율왕",   "HITTER",  "hitterHra",   "타율",   True,  False),
+    ("도루왕",   "HITTER",  "hitterSb",    "도루",   False, False),
+    ("다승왕",   "PITCHER", "pitcherWin",  "승",     False, False),
+    ("방어율왕", "PITCHER", "pitcherEra",  "방어율", True,  True),
+    ("세이브왕", "PITCHER", "pitcherSave", "세이브", False, False),
 ]
+
+
+def _fmt_stat(key, v):
+    """부문별 값 표기. 타율은 .339, 방어율은 3.78, 그 외 카운팅 스탯은 정수."""
+    if key == "hitterHra":
+        return f"{v:.3f}".lstrip("0") or ".000"   # 0.339 → .339
+    if key == "pitcherEra":
+        return f"{v:.2f}"                          # 3.7762 → 3.78
+    return str(int(v))
 
 
 def _lg_roster(player_type):
@@ -198,11 +209,12 @@ def _lg_roster(player_type):
     return list(lg.values())
 
 
-def get_key_players(limit=5):
-    """부문 1위(타이틀홀더)를 서로 다른 선수로 최대 limit명 선정.
+def get_key_players():
+    """요청된 6개 부문의 팀 내 1위(타이틀홀더)를 정의 순서대로 반환.
 
-    한 선수가 여러 부문 1위여도(예: 오스틴=홈런·타점·타율) 대표 1개만 부여하고,
-    이미 뽑힌 선수의 부문은 건너뛰어 여러 스타가 골고루 나오게 한다.
+    각 부문의 '진짜' 1위를 그대로 싣는다. 한 선수가 여러 부문 1위면
+    (예: 오스틴=홈런왕·타율왕) 각 부문에 중복 표시된다 — 사실 그대로가 우선.
+    타율·방어율은 규정 충족자만, 방어율은 최솟값이 1위.
     """
     pool = {"HITTER": _lg_roster("HITTER"), "PITCHER": _lg_roster("PITCHER")}
 
@@ -210,25 +222,22 @@ def get_key_players(limit=5):
         try:
             return float(v)
         except (TypeError, ValueError):
-            return -1.0
+            return None
 
-    used, picked = set(), []
-    for title, side, key, unit in KEY_PLAYER_CATEGORIES:
-        cand = [p for p in pool[side] if num(p.get(key)) >= 0]
+    picked = []
+    for title, side, key, unit, qualified, lowest in KEY_PLAYER_CATEGORIES:
+        cand = [p for p in pool[side]
+                if num(p.get(key)) is not None
+                and (p.get("isQualified") if qualified else True)]
         if not cand:
             continue
-        top = max(cand, key=lambda p: num(p.get(key)))
-        if top["playerId"] in used:
-            continue
-        used.add(top["playerId"])
+        best = (min if lowest else max)(cand, key=lambda p: num(p.get(key)))
         picked.append({
             "title": title,
-            "name": top["playerName"],
+            "name": best["playerName"],
             "stat": unit,
-            "value": str(int(num(top.get(key)))),
+            "value": _fmt_stat(key, num(best.get(key))),
         })
-        if len(picked) >= limit:
-            break
     return picked
 
 
