@@ -1,6 +1,6 @@
 {
   "team": "LG 트윈스",
-  "updatedAt": "2026-07-17",
+  "updatedAt": "2026-07-18",
   "season": {
     "rank": 2,
     "wins": 52,
@@ -61,13 +61,13 @@
     {
       "rank": 5,
       "team": "두산",
-      "games": 88,
-      "wins": 44,
+      "games": 89,
+      "wins": 45,
       "losses": 42,
       "draws": 2,
-      "winRate": 0.512,
-      "gamesBehind": "9",
-      "streak": "1패",
+      "winRate": 0.517,
+      "gamesBehind": "8.5",
+      "streak": "1승",
       "recent10": "6승0무4패"
     },
     {
@@ -83,15 +83,15 @@
       "recent10": "5승0무5패"
     },
     {
-      "rank": 6,
+      "rank": 7,
       "team": "NC",
-      "games": 83,
+      "games": 84,
       "wins": 40,
-      "losses": 42,
+      "losses": 43,
       "draws": 1,
-      "winRate": 0.488,
-      "gamesBehind": "11",
-      "streak": "1승",
+      "winRate": 0.482,
+      "gamesBehind": "11.5",
+      "streak": "1패",
       "recent10": "6승0무4패"
     },
     {
