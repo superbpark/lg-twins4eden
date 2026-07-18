@@ -7,19 +7,19 @@
     "losses": 35,
     "draws": 0,
     "winRate": 0.598,
-    "gamesBehind": "1.5"
+    "gamesBehind": "2"
   },
   "standings": [
     {
       "rank": 1,
       "team": "삼성",
-      "games": 86,
-      "wins": 52,
+      "games": 87,
+      "wins": 53,
       "losses": 32,
       "draws": 2,
-      "winRate": 0.619,
+      "winRate": 0.624,
       "gamesBehind": "0",
-      "streak": "2승",
+      "streak": "3승",
       "recent10": "8승0무2패"
     },
     {
@@ -30,7 +30,7 @@
       "losses": 35,
       "draws": 0,
       "winRate": 0.598,
-      "gamesBehind": "1.5",
+      "gamesBehind": "2",
       "streak": "3패",
       "recent10": "4승0무6패"
     },
@@ -42,7 +42,7 @@
       "losses": 35,
       "draws": 1,
       "winRate": 0.583,
-      "gamesBehind": "3",
+      "gamesBehind": "3.5",
       "streak": "5승",
       "recent10": "6승0무4패"
     },
@@ -54,7 +54,7 @@
       "losses": 40,
       "draws": 2,
       "winRate": 0.535,
-      "gamesBehind": "7",
+      "gamesBehind": "7.5",
       "streak": "1승",
       "recent10": "4승1무5패"
     },
@@ -66,44 +66,44 @@
       "losses": 42,
       "draws": 2,
       "winRate": 0.517,
-      "gamesBehind": "8.5",
+      "gamesBehind": "9",
       "streak": "1승",
       "recent10": "6승0무4패"
     },
     {
       "rank": 6,
       "team": "한화",
-      "games": 84,
+      "games": 85,
       "wins": 40,
-      "losses": 42,
+      "losses": 43,
       "draws": 2,
-      "winRate": 0.488,
-      "gamesBehind": "11",
-      "streak": "2패",
-      "recent10": "5승0무5패"
+      "winRate": 0.482,
+      "gamesBehind": "12",
+      "streak": "3패",
+      "recent10": "4승0무6패"
     },
     {
-      "rank": 7,
+      "rank": 6,
       "team": "NC",
       "games": 84,
       "wins": 40,
       "losses": 43,
       "draws": 1,
       "winRate": 0.482,
-      "gamesBehind": "11.5",
+      "gamesBehind": "12",
       "streak": "1패",
       "recent10": "6승0무4패"
     },
     {
       "rank": 8,
       "team": "롯데",
-      "games": 86,
+      "games": 87,
       "wins": 38,
-      "losses": 46,
+      "losses": 47,
       "draws": 2,
-      "winRate": 0.452,
-      "gamesBehind": "14",
-      "streak": "2패",
+      "winRate": 0.447,
+      "gamesBehind": "15",
+      "streak": "3패",
       "recent10": "5승0무5패"
     },
     {
@@ -114,20 +114,20 @@
       "losses": 53,
       "draws": 3,
       "winRate": 0.376,
-      "gamesBehind": "20.5",
+      "gamesBehind": "21",
       "streak": "1패",
       "recent10": "2승1무7패"
     },
     {
       "rank": 10,
       "team": "키움",
-      "games": 89,
-      "wins": 31,
+      "games": 90,
+      "wins": 32,
       "losses": 57,
       "draws": 1,
-      "winRate": 0.352,
+      "winRate": 0.36,
       "gamesBehind": "23",
-      "streak": "2승",
+      "streak": "3승",
       "recent10": "4승0무6패"
     }
   ],
