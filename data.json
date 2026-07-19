@@ -1,148 +1,148 @@
 {
   "team": "LG 트윈스",
-  "updatedAt": "2026-07-19",
+  "updatedAt": "2026-07-20",
   "season": {
-    "rank": 2,
+    "rank": 3,
     "wins": 52,
-    "losses": 36,
+    "losses": 37,
     "draws": 0,
-    "winRate": 0.591,
+    "winRate": 0.584,
     "gamesBehind": "2.5"
   },
   "standings": [
     {
       "rank": 1,
       "team": "삼성",
-      "games": 87,
+      "games": 88,
       "wins": 53,
-      "losses": 32,
+      "losses": 33,
       "draws": 2,
-      "winRate": 0.624,
+      "winRate": 0.616,
       "gamesBehind": "0",
-      "streak": "3승",
+      "streak": "1패",
       "recent10": "8승0무2패"
     },
     {
       "rank": 2,
-      "team": "LG",
-      "games": 88,
-      "wins": 52,
-      "losses": 36,
-      "draws": 0,
-      "winRate": 0.591,
-      "gamesBehind": "2.5",
-      "streak": "4패",
-      "recent10": "4승0무6패"
+      "team": "KT",
+      "games": 87,
+      "wins": 51,
+      "losses": 35,
+      "draws": 1,
+      "winRate": 0.593,
+      "gamesBehind": "2",
+      "streak": "7승",
+      "recent10": "7승0무3패"
     },
     {
       "rank": 3,
-      "team": "KT",
-      "games": 86,
-      "wins": 50,
-      "losses": 35,
-      "draws": 1,
-      "winRate": 0.588,
-      "gamesBehind": "3",
-      "streak": "6승",
-      "recent10": "7승0무3패"
+      "team": "LG",
+      "games": 89,
+      "wins": 52,
+      "losses": 37,
+      "draws": 0,
+      "winRate": 0.584,
+      "gamesBehind": "2.5",
+      "streak": "5패",
+      "recent10": "3승0무7패"
     },
     {
       "rank": 4,
       "team": "KIA",
-      "games": 89,
-      "wins": 47,
+      "games": 90,
+      "wins": 48,
       "losses": 40,
       "draws": 2,
-      "winRate": 0.54,
-      "gamesBehind": "7",
-      "streak": "2승",
-      "recent10": "4승1무5패"
+      "winRate": 0.545,
+      "gamesBehind": "6",
+      "streak": "3승",
+      "recent10": "5승0무5패"
     },
     {
       "rank": 5,
       "team": "두산",
-      "games": 90,
-      "wins": 46,
+      "games": 91,
+      "wins": 47,
       "losses": 42,
       "draws": 2,
-      "winRate": 0.523,
-      "gamesBehind": "8.5",
-      "streak": "2승",
+      "winRate": 0.528,
+      "gamesBehind": "7.5",
+      "streak": "3승",
       "recent10": "7승0무3패"
     },
     {
       "rank": 6,
       "team": "한화",
-      "games": 85,
+      "games": 86,
       "wins": 40,
       "losses": 43,
-      "draws": 2,
+      "draws": 3,
       "winRate": 0.482,
-      "gamesBehind": "12",
+      "gamesBehind": "11.5",
       "streak": "3패",
-      "recent10": "4승0무6패"
+      "recent10": "3승1무6패"
     },
     {
       "rank": 7,
       "team": "NC",
-      "games": 85,
+      "games": 86,
       "wins": 40,
-      "losses": 44,
+      "losses": 45,
       "draws": 1,
-      "winRate": 0.476,
+      "winRate": 0.471,
       "gamesBehind": "12.5",
-      "streak": "2패",
+      "streak": "3패",
       "recent10": "5승0무5패"
     },
     {
       "rank": 8,
       "team": "롯데",
-      "games": 87,
-      "wins": 38,
+      "games": 88,
+      "wins": 39,
       "losses": 47,
       "draws": 2,
-      "winRate": 0.447,
-      "gamesBehind": "15",
-      "streak": "3패",
+      "winRate": 0.453,
+      "gamesBehind": "14",
+      "streak": "1승",
       "recent10": "5승0무5패"
     },
     {
       "rank": 9,
       "team": "SSG",
-      "games": 89,
+      "games": 90,
       "wins": 32,
-      "losses": 54,
+      "losses": 55,
       "draws": 3,
-      "winRate": 0.372,
+      "winRate": 0.368,
       "gamesBehind": "21.5",
-      "streak": "2패",
+      "streak": "3패",
       "recent10": "2승0무8패"
     },
     {
       "rank": 10,
       "team": "키움",
-      "games": 90,
+      "games": 91,
       "wins": 32,
       "losses": 57,
-      "draws": 1,
+      "draws": 2,
       "winRate": 0.36,
-      "gamesBehind": "23",
+      "gamesBehind": "22.5",
       "streak": "3승",
-      "recent10": "4승0무6패"
+      "recent10": "4승1무5패"
     }
   ],
   "lastGame": {
-    "date": "2026-07-18",
+    "date": "2026-07-19",
     "opponent": "KT 위즈",
     "home": true,
-    "teamScore": 2,
-    "opponentScore": 8,
+    "teamScore": 1,
+    "opponentScore": 4,
     "result": "L",
     "stadium": "잠실",
-    "highlight": "홈 KT전 2-8 패배",
-    "winningPitcher": "사우어",
+    "highlight": "홈 KT전 1-4 패배",
+    "winningPitcher": "고영표",
     "savePitcher": null,
-    "losingPitcher": "임찬규",
+    "losingPitcher": "송승기",
     "scoreBoard": {
       "away": {
         "name": "KT",
@@ -151,55 +151,46 @@
           1,
           0,
           0,
-          4,
+          0,
+          0,
           0,
           1,
-          2,
-          0
+          2
         ],
-        "r": 8,
-        "h": 17,
+        "r": 4,
+        "h": 10,
         "e": 0
       },
       "home": {
         "name": "LG",
         "innings": [
           0,
-          2,
           0,
           0,
           0,
           0,
           0,
           0,
-          0
+          0,
+          1
         ],
-        "r": 2,
-        "h": 6,
+        "r": 1,
+        "h": 7,
         "e": 0
       }
     },
     "keyPlays": [
       {
         "how": "결승타",
-        "result": "힐리어드(5회 무사 1,2루서 좌중간 안타)"
+        "result": "권동진(2회 2사 1,2루서 중전 안타)"
       },
       {
         "how": "홈런",
-        "result": "문정빈8호(2회2점 사우어) 힐리어드23호(8회2점 김진수)"
+        "result": "장성우9호(8회1점 김진수) 박동원10호(9회1점 박영현)"
       }
     ]
   },
   "recentForm": [
-    {
-      "result": "W",
-      "opponent": "키움",
-      "home": false,
-      "date": "2026-07-01",
-      "stadium": "고척",
-      "teamScore": 10,
-      "opponentScore": 4
-    },
     {
       "result": "W",
       "opponent": "키움",
@@ -280,6 +271,15 @@
       "stadium": "잠실",
       "teamScore": 2,
       "opponentScore": 8
+    },
+    {
+      "result": "L",
+      "opponent": "KT",
+      "home": true,
+      "date": "2026-07-19",
+      "stadium": "잠실",
+      "teamScore": 1,
+      "opponentScore": 4
     }
   ],
   "nextGame": {
