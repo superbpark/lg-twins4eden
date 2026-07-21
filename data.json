@@ -1,6 +1,6 @@
 {
   "team": "LG 트윈스",
-  "updatedAt": "2026-07-21",
+  "updatedAt": "2026-07-22",
   "season": {
     "rank": 3,
     "wins": 52,
@@ -132,74 +132,65 @@
     }
   ],
   "lastGame": {
-    "date": "2026-07-19",
-    "opponent": "KT 위즈",
+    "date": "2026-07-21",
+    "opponent": "NC 다이노스",
     "home": true,
-    "teamScore": 1,
-    "opponentScore": 4,
+    "teamScore": 5,
+    "opponentScore": 7,
     "result": "L",
     "stadium": "잠실",
-    "highlight": "홈 KT전 1-4 패배",
-    "winningPitcher": "고영표",
-    "savePitcher": null,
-    "losingPitcher": "송승기",
+    "highlight": "홈 NC전 5-7 패배",
+    "winningPitcher": "전사민",
+    "savePitcher": "임지민",
+    "losingPitcher": "김윤식",
     "scoreBoard": {
       "away": {
-        "name": "KT",
+        "name": "NC",
         "innings": [
           0,
-          1,
-          0,
-          0,
-          0,
-          0,
           0,
           1,
-          2
+          0,
+          4,
+          0,
+          2,
+          0,
+          0
         ],
-        "r": 4,
-        "h": 10,
-        "e": 0
+        "r": 7,
+        "h": 14,
+        "e": 1
       },
       "home": {
         "name": "LG",
         "innings": [
+          2,
           0,
           0,
           0,
+          2,
+          1,
           0,
           0,
-          0,
-          0,
-          0,
-          1
+          0
         ],
-        "r": 1,
-        "h": 7,
+        "r": 5,
+        "h": 8,
         "e": 0
       }
     },
     "keyPlays": [
       {
         "how": "결승타",
-        "result": "권동진(2회 2사 1,2루서 중전 안타)"
+        "result": "김휘집(7회 2사 1루서 좌월 홈런)"
       },
       {
         "how": "홈런",
-        "result": "장성우9호(8회1점 김진수) 박동원10호(9회1점 박영현)"
+        "result": "김휘집7호(7회2점 김윤식)"
       }
     ]
   },
   "recentForm": [
-    {
-      "result": "W",
-      "opponent": "키움",
-      "home": false,
-      "date": "2026-07-02",
-      "stadium": "고척",
-      "teamScore": 7,
-      "opponentScore": 5
-    },
     {
       "result": "L",
       "opponent": "한화",
@@ -280,6 +271,15 @@
       "stadium": "잠실",
       "teamScore": 1,
       "opponentScore": 4
+    },
+    {
+      "result": "L",
+      "opponent": "NC",
+      "home": true,
+      "date": "2026-07-21",
+      "stadium": "잠실",
+      "teamScore": 5,
+      "opponentScore": 7
     }
   ],
   "nextGame": {
@@ -300,7 +300,7 @@
       "title": "타율왕",
       "name": "오스틴",
       "stat": "타율",
-      "value": ".337"
+      "value": ".334"
     },
     {
       "title": "도루왕",
