@@ -283,9 +283,9 @@
     }
   ],
   "nextGame": {
-    "date": "2026-07-30",
-    "opponent": "키움 히어로즈",
-    "home": true,
+    "date": "2026-07-31",
+    "opponent": "두산 베어스",
+    "home": false,
     "stadium": "잠실",
     "time": "18:30"
   },
