@@ -281,13 +281,7 @@
       "opponentScore": 3
     }
   ],
-  "nextGame": {
-    "date": "2026-07-31",
-    "opponent": "두산 베어스",
-    "home": false,
-    "stadium": "잠실",
-    "time": "18:30"
-  },
+  "nextGame": null,
   "keyPlayers": [
     {
       "title": "홈런왕",
