@@ -12,6 +12,18 @@
   "standings": [
     {
       "rank": 1,
+      "team": "KT",
+      "games": 96,
+      "wins": 58,
+      "losses": 36,
+      "draws": 2,
+      "winRate": 0.617,
+      "gamesBehind": "0",
+      "streak": "5승",
+      "recent10": "8승1무1패"
+    },
+    {
+      "rank": 2,
       "team": "삼성",
       "games": 98,
       "wins": 59,
@@ -21,18 +33,6 @@
       "gamesBehind": "0",
       "streak": "1승",
       "recent10": "6승0무4패"
-    },
-    {
-      "rank": 2,
-      "team": "KT",
-      "games": 95,
-      "wins": 57,
-      "losses": 36,
-      "draws": 2,
-      "winRate": 0.613,
-      "gamesBehind": "0.5",
-      "streak": "4승",
-      "recent10": "8승1무1패"
     },
     {
       "rank": 3,
@@ -73,13 +73,13 @@
     {
       "rank": 6,
       "team": "한화",
-      "games": 96,
+      "games": 97,
       "wins": 46,
-      "losses": 47,
+      "losses": 48,
       "draws": 3,
-      "winRate": 0.495,
-      "gamesBehind": "11.5",
-      "streak": "1패",
+      "winRate": 0.489,
+      "gamesBehind": "12",
+      "streak": "2패",
       "recent10": "6승0무4패"
     },
     {
