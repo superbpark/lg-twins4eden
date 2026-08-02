@@ -109,25 +109,25 @@
     {
       "rank": 9,
       "team": "SSG",
-      "games": 101,
+      "games": 102,
       "wins": 38,
-      "losses": 59,
+      "losses": 60,
       "draws": 4,
-      "winRate": 0.392,
-      "gamesBehind": "21.5",
-      "streak": "1승",
-      "recent10": "6승1무3패"
+      "winRate": 0.388,
+      "gamesBehind": "22",
+      "streak": "1패",
+      "recent10": "5승1무4패"
     },
     {
       "rank": 10,
       "team": "키움",
-      "games": 102,
-      "wins": 37,
+      "games": 103,
+      "wins": 38,
       "losses": 63,
       "draws": 2,
-      "winRate": 0.37,
-      "gamesBehind": "24",
-      "streak": "1패",
+      "winRate": 0.376,
+      "gamesBehind": "23.5",
+      "streak": "1승",
       "recent10": "5승0무5패"
     }
   ],
@@ -283,11 +283,11 @@
     }
   ],
   "nextGame": {
-    "date": "2026-08-02",
-    "opponent": "두산 베어스",
+    "date": "2026-08-04",
+    "opponent": "SSG 랜더스",
     "home": false,
-    "stadium": "잠실",
-    "time": "18:00"
+    "stadium": "문학",
+    "time": "18:30"
   },
   "keyPlayers": [
     {
