@@ -1,13 +1,13 @@
 {
   "team": "LG 트윈스",
-  "updatedAt": "2026-08-04",
+  "updatedAt": "2026-08-05",
   "season": {
     "rank": 3,
     "wins": 55,
-    "losses": 44,
+    "losses": 45,
     "draws": 1,
-    "winRate": 0.556,
-    "gamesBehind": "6"
+    "winRate": 0.55,
+    "gamesBehind": "6.5"
   },
   "standings": [
     {
@@ -25,25 +25,25 @@
     {
       "rank": 2,
       "team": "삼성",
-      "games": 99,
+      "games": 100,
       "wins": 59,
-      "losses": 38,
+      "losses": 39,
       "draws": 2,
-      "winRate": 0.608,
-      "gamesBehind": "1",
-      "streak": "1패",
+      "winRate": 0.602,
+      "gamesBehind": "1.5",
+      "streak": "2패",
       "recent10": "5승0무5패"
     },
     {
       "rank": 3,
       "team": "LG",
-      "games": 100,
+      "games": 101,
       "wins": 55,
-      "losses": 44,
+      "losses": 45,
       "draws": 1,
-      "winRate": 0.556,
-      "gamesBehind": "6",
-      "streak": "2패",
+      "winRate": 0.55,
+      "gamesBehind": "6.5",
+      "streak": "3패",
       "recent10": "3승1무6패"
     },
     {
@@ -73,13 +73,13 @@
     {
       "rank": 6,
       "team": "한화",
-      "games": 98,
-      "wins": 46,
+      "games": 99,
+      "wins": 47,
       "losses": 49,
       "draws": 3,
-      "winRate": 0.484,
-      "gamesBehind": "13",
-      "streak": "3패",
+      "winRate": 0.49,
+      "gamesBehind": "12.5",
+      "streak": "1승",
       "recent10": "5승0무5패"
     },
     {
@@ -97,108 +97,99 @@
     {
       "rank": 8,
       "team": "롯데",
-      "games": 99,
-      "wins": 43,
+      "games": 100,
+      "wins": 44,
       "losses": 54,
       "draws": 2,
-      "winRate": 0.443,
-      "gamesBehind": "17",
-      "streak": "1승",
-      "recent10": "3승0무7패"
+      "winRate": 0.449,
+      "gamesBehind": "16.5",
+      "streak": "2승",
+      "recent10": "4승0무6패"
     },
     {
       "rank": 9,
       "team": "SSG",
-      "games": 102,
-      "wins": 38,
+      "games": 103,
+      "wins": 39,
       "losses": 60,
       "draws": 4,
-      "winRate": 0.388,
-      "gamesBehind": "22.5",
-      "streak": "1패",
+      "winRate": 0.394,
+      "gamesBehind": "22",
+      "streak": "1승",
       "recent10": "5승1무4패"
     },
     {
       "rank": 10,
       "team": "키움",
-      "games": 103,
+      "games": 104,
       "wins": 38,
-      "losses": 63,
+      "losses": 64,
       "draws": 2,
-      "winRate": 0.376,
-      "gamesBehind": "24",
-      "streak": "1승",
+      "winRate": 0.373,
+      "gamesBehind": "24.5",
+      "streak": "1패",
       "recent10": "5승0무5패"
     }
   ],
   "lastGame": {
-    "date": "2026-08-02",
-    "opponent": "두산 베어스",
+    "date": "2026-08-04",
+    "opponent": "SSG 랜더스",
     "home": false,
-    "teamScore": 3,
-    "opponentScore": 8,
+    "teamScore": 8,
+    "opponentScore": 10,
     "result": "L",
-    "stadium": "잠실",
-    "highlight": "원정 두산전 3-8 패배",
-    "winningPitcher": "벤자민",
-    "savePitcher": null,
-    "losingPitcher": "톨허스트",
+    "stadium": "문학",
+    "highlight": "원정 SSG전 8-10 패배",
+    "winningPitcher": "전영준",
+    "savePitcher": "조병현",
+    "losingPitcher": "박시원",
     "scoreBoard": {
       "away": {
         "name": "LG",
         "innings": [
           0,
+          1,
           0,
-          2,
           1,
           0,
           0,
           0,
-          0,
+          6,
           0
         ],
-        "r": 3,
-        "h": 6,
-        "e": 0
+        "r": 8,
+        "h": 8,
+        "e": 1
       },
       "home": {
-        "name": "두산",
+        "name": "SSG",
         "innings": [
-          1,
-          1,
-          0,
-          4,
+          2,
           0,
           0,
-          1,
+          0,
+          0,
+          0,
+          7,
           1
         ],
-        "r": 8,
-        "h": 13,
+        "r": 10,
+        "h": 10,
         "e": 0
       }
     },
     "keyPlays": [
       {
         "how": "결승타",
-        "result": "박찬호(4회 무사 2,3루서 좌익수 2루타)"
+        "result": "정준재(7회 2사 3루서 좌전 안타)"
       },
       {
         "how": "홈런",
-        "result": "이주헌4호(3회2점 벤자민)"
+        "result": "전의산6호(1회2점 웰스) 천성호2호(4회1점 김민준) 조형우7호(7회3점 김진수) 김재환17호(7회3점 김진수) 이재원4호(8회3점 최민준)"
       }
     ]
   },
   "recentForm": [
-    {
-      "result": "L",
-      "opponent": "NC",
-      "home": true,
-      "date": "2026-07-23",
-      "stadium": "잠실",
-      "teamScore": 5,
-      "opponentScore": 7
-    },
     {
       "result": "L",
       "opponent": "한화",
@@ -279,6 +270,15 @@
       "stadium": "잠실",
       "teamScore": 3,
       "opponentScore": 8
+    },
+    {
+      "result": "L",
+      "opponent": "SSG",
+      "home": false,
+      "date": "2026-08-04",
+      "stadium": "문학",
+      "teamScore": 8,
+      "opponentScore": 10
     }
   ],
   "nextGame": {
@@ -299,13 +299,13 @@
       "title": "타율왕",
       "name": "오스틴",
       "stat": "타율",
-      "value": ".337"
+      "value": ".334"
     },
     {
       "title": "도루왕",
       "name": "박해민",
       "stat": "도루",
-      "value": "26"
+      "value": "27"
     },
     {
       "title": "다승왕",
