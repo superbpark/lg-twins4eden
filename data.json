@@ -1,6 +1,6 @@
 {
   "team": "LG 트윈스",
-  "updatedAt": "2026-08-09",
+  "updatedAt": "2026-08-10",
   "season": {
     "rank": 3,
     "wins": 55,
@@ -282,11 +282,11 @@
     }
   ],
   "nextGame": {
-    "date": "2026-08-09",
-    "opponent": "KIA 타이거즈",
-    "home": true,
-    "stadium": "잠실",
-    "time": "18:00"
+    "date": "2026-08-11",
+    "opponent": "키움 히어로즈",
+    "home": false,
+    "stadium": "고척",
+    "time": "19:00"
   },
   "keyPlayers": [
     {
