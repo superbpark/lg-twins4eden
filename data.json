@@ -3,202 +3,194 @@
   "updatedAt": "2026-08-13",
   "season": {
     "rank": 3,
-    "wins": 56,
+    "wins": 57,
     "losses": 46,
     "draws": 1,
-    "winRate": 0.549,
-    "gamesBehind": "6.5"
+    "winRate": 0.553,
+    "gamesBehind": "5.5"
   },
   "standings": [
     {
       "rank": 1,
       "team": "KT",
-      "games": 99,
+      "games": 100,
       "wins": 60,
-      "losses": 37,
+      "losses": 38,
       "draws": 2,
-      "winRate": 0.619,
+      "winRate": 0.612,
       "gamesBehind": "0",
-      "streak": "1패",
-      "recent10": "8승0무2패"
+      "streak": "2패",
+      "recent10": "7승0무3패"
     },
     {
       "rank": 2,
       "team": "삼성",
-      "games": 102,
-      "wins": 59,
+      "games": 103,
+      "wins": 60,
       "losses": 41,
       "draws": 2,
-      "winRate": 0.59,
-      "gamesBehind": "2.5",
-      "streak": "4패",
+      "winRate": 0.594,
+      "gamesBehind": "1.5",
+      "streak": "1승",
       "recent10": "3승0무7패"
     },
     {
       "rank": 3,
       "team": "LG",
-      "games": 103,
-      "wins": 56,
+      "games": 104,
+      "wins": 57,
       "losses": 46,
       "draws": 1,
-      "winRate": 0.549,
-      "gamesBehind": "6.5",
-      "streak": "1패",
-      "recent10": "3승1무6패"
+      "winRate": 0.553,
+      "gamesBehind": "5.5",
+      "streak": "1승",
+      "recent10": "4승1무5패"
     },
     {
       "rank": 4,
-      "team": "KIA",
-      "games": 102,
+      "team": "두산",
+      "games": 104,
       "wins": 54,
       "losses": 46,
-      "draws": 2,
+      "draws": 4,
       "winRate": 0.54,
-      "gamesBehind": "7.5",
-      "streak": "2승",
-      "recent10": "5승0무5패"
+      "gamesBehind": "7",
+      "streak": "1승",
+      "recent10": "7승1무2패"
     },
     {
       "rank": 5,
-      "team": "두산",
+      "team": "KIA",
       "games": 103,
-      "wins": 53,
-      "losses": 46,
-      "draws": 4,
+      "wins": 54,
+      "losses": 47,
+      "draws": 2,
       "winRate": 0.535,
-      "gamesBehind": "8",
+      "gamesBehind": "7.5",
       "streak": "1패",
-      "recent10": "6승1무3패"
+      "recent10": "5승0무5패"
     },
     {
       "rank": 6,
       "team": "한화",
-      "games": 101,
+      "games": 102,
       "wins": 48,
-      "losses": 50,
+      "losses": 51,
       "draws": 3,
-      "winRate": 0.49,
+      "winRate": 0.485,
       "gamesBehind": "12.5",
-      "streak": "1승",
-      "recent10": "5승0무5패"
+      "streak": "1패",
+      "recent10": "4승0무6패"
     },
     {
       "rank": 7,
       "team": "NC",
-      "games": 97,
-      "wins": 44,
+      "games": 98,
+      "wins": 45,
       "losses": 51,
       "draws": 2,
-      "winRate": 0.463,
-      "gamesBehind": "15",
-      "streak": "1승",
+      "winRate": 0.469,
+      "gamesBehind": "14",
+      "streak": "2승",
       "recent10": "3승1무6패"
     },
     {
       "rank": 8,
       "team": "롯데",
-      "games": 102,
-      "wins": 44,
+      "games": 103,
+      "wins": 45,
       "losses": 56,
       "draws": 2,
-      "winRate": 0.44,
-      "gamesBehind": "17.5",
-      "streak": "2패",
-      "recent10": "4승0무6패"
+      "winRate": 0.446,
+      "gamesBehind": "16.5",
+      "streak": "1승",
+      "recent10": "5승0무5패"
     },
     {
       "rank": 9,
       "team": "SSG",
-      "games": 105,
+      "games": 106,
       "wins": 41,
-      "losses": 60,
+      "losses": 61,
       "draws": 4,
-      "winRate": 0.406,
+      "winRate": 0.402,
       "gamesBehind": "21",
-      "streak": "3승",
-      "recent10": "5승1무4패"
+      "streak": "1패",
+      "recent10": "5승0무5패"
     },
     {
       "rank": 10,
       "team": "키움",
-      "games": 106,
+      "games": 107,
       "wins": 39,
-      "losses": 65,
+      "losses": 66,
       "draws": 2,
-      "winRate": 0.375,
+      "winRate": 0.371,
       "gamesBehind": "24.5",
-      "streak": "1승",
-      "recent10": "5승0무5패"
+      "streak": "1패",
+      "recent10": "4승0무6패"
     }
   ],
   "lastGame": {
-    "date": "2026-08-12",
+    "date": "2026-08-13",
     "opponent": "키움 히어로즈",
     "home": false,
-    "teamScore": 3,
-    "opponentScore": 4,
-    "result": "L",
+    "teamScore": 13,
+    "opponentScore": 6,
+    "result": "W",
     "stadium": "고척",
-    "highlight": "원정 키움전 3-4 패배",
-    "winningPitcher": "박진형",
-    "savePitcher": "원종현",
-    "losingPitcher": "김진수",
+    "highlight": "원정 키움전 13-6 승리",
+    "winningPitcher": "톨허스트",
+    "savePitcher": null,
+    "losingPitcher": "알칸타라",
     "scoreBoard": {
       "away": {
         "name": "LG",
         "innings": [
           0,
           0,
-          0,
-          0,
-          0,
           1,
+          1,
+          8,
           0,
-          2,
+          3,
+          0,
           0
         ],
-        "r": 3,
-        "h": 6,
-        "e": 2
+        "r": 13,
+        "h": 13,
+        "e": 0
       },
       "home": {
         "name": "키움",
         "innings": [
           0,
-          0,
-          0,
-          0,
+          3,
           0,
           1,
           0,
-          3
+          2,
+          0,
+          0,
+          0
         ],
-        "r": 4,
-        "h": 9,
-        "e": 1
+        "r": 6,
+        "h": 12,
+        "e": 0
       }
     },
     "keyPlays": [
       {
         "how": "결승타",
-        "result": "없음"
+        "result": "오스틴(5회 무사 1,2루서 우월 홈런)"
       },
       {
         "how": "홈런",
-        "result": "문정빈11호(8회2점 유토)"
+        "result": "임병욱9호(4회1점 톨허스트) 오스틴32호(5회3점 알칸타라) 서건창2호(6회2점 톨허스트)"
       }
     ]
   },
   "recentForm": [
-    {
-      "result": "L",
-      "opponent": "한화",
-      "home": false,
-      "date": "2026-07-26",
-      "stadium": "대전",
-      "teamScore": 4,
-      "opponentScore": 14
-    },
     {
       "result": "W",
       "opponent": "키움",
@@ -279,6 +271,15 @@
       "stadium": "고척",
       "teamScore": 3,
       "opponentScore": 4
+    },
+    {
+      "result": "W",
+      "opponent": "키움",
+      "home": false,
+      "date": "2026-08-13",
+      "stadium": "고척",
+      "teamScore": 13,
+      "opponentScore": 6
     }
   ],
   "nextGame": {
@@ -293,13 +294,13 @@
       "title": "홈런왕",
       "name": "오스틴",
       "stat": "홈런",
-      "value": "31"
+      "value": "32"
     },
     {
       "title": "타율왕",
       "name": "오스틴",
       "stat": "타율",
-      "value": ".330"
+      "value": ".333"
     },
     {
       "title": "도루왕",
