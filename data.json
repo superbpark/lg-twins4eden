@@ -3,203 +3,193 @@
   "updatedAt": "2026-08-18",
   "season": {
     "rank": 3,
-    "wins": 58,
+    "wins": 59,
     "losses": 48,
     "draws": 1,
-    "winRate": 0.547,
-    "gamesBehind": "6.5"
+    "winRate": 0.551,
+    "gamesBehind": "5.5"
   },
   "standings": [
     {
       "rank": 1,
       "team": "KT",
-      "games": 103,
+      "games": 104,
       "wins": 62,
-      "losses": 39,
+      "losses": 40,
       "draws": 2,
-      "winRate": 0.614,
+      "winRate": 0.608,
       "gamesBehind": "0",
-      "streak": "1승",
-      "recent10": "7승0무3패"
+      "streak": "1패",
+      "recent10": "6승0무4패"
     },
     {
       "rank": 2,
       "team": "삼성",
-      "games": 105,
+      "games": 106,
       "wins": 62,
-      "losses": 41,
+      "losses": 42,
       "draws": 2,
-      "winRate": 0.602,
+      "winRate": 0.596,
       "gamesBehind": "1",
-      "streak": "3승",
+      "streak": "1패",
       "recent10": "4승0무6패"
     },
     {
       "rank": 3,
       "team": "LG",
-      "games": 107,
-      "wins": 58,
+      "games": 108,
+      "wins": 59,
       "losses": 48,
       "draws": 1,
-      "winRate": 0.547,
-      "gamesBehind": "6.5",
-      "streak": "1패",
-      "recent10": "3승1무6패"
+      "winRate": 0.551,
+      "gamesBehind": "5.5",
+      "streak": "1승",
+      "recent10": "4승1무5패"
     },
     {
       "rank": 4,
       "team": "KIA",
-      "games": 106,
-      "wins": 56,
+      "games": 107,
+      "wins": 57,
       "losses": 48,
       "draws": 2,
-      "winRate": 0.538,
-      "gamesBehind": "7.5",
-      "streak": "2승",
-      "recent10": "6승0무4패"
+      "winRate": 0.543,
+      "gamesBehind": "6.5",
+      "streak": "3승",
+      "recent10": "7승0무3패"
     },
     {
       "rank": 5,
       "team": "두산",
-      "games": 107,
-      "wins": 55,
+      "games": 108,
+      "wins": 56,
       "losses": 48,
       "draws": 4,
-      "winRate": 0.534,
-      "gamesBehind": "8",
-      "streak": "2패",
+      "winRate": 0.538,
+      "gamesBehind": "7",
+      "streak": "1승",
       "recent10": "6승1무3패"
     },
     {
       "rank": 6,
       "team": "한화",
-      "games": 104,
+      "games": 105,
       "wins": 48,
-      "losses": 53,
+      "losses": 54,
       "draws": 3,
-      "winRate": 0.475,
+      "winRate": 0.471,
       "gamesBehind": "14",
-      "streak": "3패",
-      "recent10": "3승0무7패"
+      "streak": "4패",
+      "recent10": "2승0무8패"
     },
     {
       "rank": 7,
       "team": "NC",
-      "games": 100,
+      "games": 101,
       "wins": 46,
-      "losses": 52,
+      "losses": 53,
       "draws": 2,
-      "winRate": 0.469,
+      "winRate": 0.465,
       "gamesBehind": "14.5",
-      "streak": "1패",
-      "recent10": "4승1무5패"
+      "streak": "2패",
+      "recent10": "4승0무6패"
     },
     {
       "rank": 8,
       "team": "롯데",
-      "games": 105,
-      "wins": 46,
+      "games": 106,
+      "wins": 47,
       "losses": 57,
       "draws": 2,
-      "winRate": 0.447,
-      "gamesBehind": "17",
-      "streak": "1승",
-      "recent10": "4승0무6패"
+      "winRate": 0.452,
+      "gamesBehind": "16",
+      "streak": "2승",
+      "recent10": "5승0무5패"
     },
     {
       "rank": 9,
       "team": "SSG",
-      "games": 109,
-      "wins": 43,
+      "games": 110,
+      "wins": 44,
       "losses": 62,
       "draws": 4,
-      "winRate": 0.41,
-      "gamesBehind": "21",
-      "streak": "1승",
-      "recent10": "6승0무4패"
+      "winRate": 0.415,
+      "gamesBehind": "20",
+      "streak": "2승",
+      "recent10": "7승0무3패"
     },
     {
       "rank": 10,
       "team": "키움",
-      "games": 110,
+      "games": 111,
       "wins": 40,
-      "losses": 68,
+      "losses": 69,
       "draws": 2,
-      "winRate": 0.37,
+      "winRate": 0.367,
       "gamesBehind": "25.5",
-      "streak": "1패",
-      "recent10": "4승0무6패"
+      "streak": "2패",
+      "recent10": "3승0무7패"
     }
   ],
   "lastGame": {
-    "date": "2026-08-16",
-    "opponent": "SSG 랜더스",
+    "date": "2026-08-18",
+    "opponent": "KT 위즈",
     "home": true,
-    "teamScore": 0,
-    "opponentScore": 6,
-    "result": "L",
+    "teamScore": 9,
+    "opponentScore": 1,
+    "result": "W",
     "stadium": "잠실",
-    "highlight": "홈 SSG전 0-6 패배",
-    "winningPitcher": "아빌라",
+    "highlight": "홈 KT전 9-1 승리",
+    "winningPitcher": "임찬규",
     "savePitcher": null,
-    "losingPitcher": "카라스코",
+    "losingPitcher": "소형준",
     "scoreBoard": {
       "away": {
-        "name": "SSG",
+        "name": "KT",
         "innings": [
           0,
           0,
           0,
-          0,
-          3,
-          2,
           1,
+          0,
+          0,
+          0,
           0,
           0
         ],
-        "r": 6,
-        "h": 13,
-        "e": 0
+        "r": 1,
+        "h": 3,
+        "e": 1
       },
       "home": {
         "name": "LG",
         "innings": [
+          2,
           0,
           0,
           0,
+          4,
           0,
-          0,
-          0,
-          0,
-          0,
+          3,
           0
         ],
-        "r": 0,
-        "h": 4,
-        "e": 0
+        "r": 9,
+        "h": 11,
+        "e": 1
       }
     },
     "keyPlays": [
       {
         "how": "결승타",
-        "result": "정준재(5회 1사 2,3루서 중전 안타)"
+        "result": "송찬의(1회 2사 2,3루서 좌전 안타)"
       },
       {
         "how": "홈런",
-        "result": "마드리스4호(6회1점 카라스코) 한유섬2호(6회1점 카라스코)"
+        "result": "안현민8호(4회1점 임찬규) 문정빈14호(5회4점 소형준)"
       }
     ]
   },
   "recentForm": [
-    {
-      "result": "L",
-      "opponent": "두산",
-      "home": false,
-      "date": "2026-07-31",
-      "stadium": "잠실",
-      "teamScore": 2,
-      "opponentScore": 4
-    },
     {
       "result": "D",
       "opponent": "두산",
@@ -280,6 +270,15 @@
       "stadium": "잠실",
       "teamScore": 0,
       "opponentScore": 6
+    },
+    {
+      "result": "W",
+      "opponent": "KT",
+      "home": true,
+      "date": "2026-08-18",
+      "stadium": "잠실",
+      "teamScore": 9,
+      "opponentScore": 1
     }
   ],
   "nextGame": {
@@ -300,25 +299,25 @@
       "title": "타율왕",
       "name": "오스틴",
       "stat": "타율",
-      "value": ".334"
+      "value": ".335"
     },
     {
       "title": "도루왕",
       "name": "박해민",
       "stat": "도루",
-      "value": "28"
+      "value": "30"
     },
     {
       "title": "다승왕",
       "name": "임찬규",
       "stat": "승",
-      "value": "10"
+      "value": "11"
     },
     {
       "title": "방어율왕",
       "name": "임찬규",
       "stat": "방어율",
-      "value": "4.28"
+      "value": "4.14"
     },
     {
       "title": "세이브왕",
