@@ -1,6 +1,6 @@
 {
   "team": "LG 트윈스",
-  "updatedAt": "2026-08-22",
+  "updatedAt": "2026-08-23",
   "season": {
     "rank": 4,
     "wins": 60,
@@ -282,7 +282,7 @@
     }
   ],
   "nextGame": {
-    "date": "2026-08-22",
+    "date": "2026-08-23",
     "opponent": "한화 이글스",
     "home": false,
     "stadium": "대전",
