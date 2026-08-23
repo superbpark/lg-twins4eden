@@ -2,7 +2,7 @@
   "team": "LG 트윈스",
   "updatedAt": "2026-08-23",
   "season": {
-    "rank": 4,
+    "rank": 3,
     "wins": 60,
     "losses": 50,
     "draws": 1,
@@ -36,18 +36,6 @@
     },
     {
       "rank": 3,
-      "team": "KIA",
-      "games": 111,
-      "wins": 60,
-      "losses": 49,
-      "draws": 2,
-      "winRate": 0.55,
-      "gamesBehind": "5.5",
-      "streak": "1패",
-      "recent10": "7승0무3패"
-    },
-    {
-      "rank": 4,
       "team": "LG",
       "games": 111,
       "wins": 60,
@@ -57,6 +45,18 @@
       "gamesBehind": "6",
       "streak": "2패",
       "recent10": "5승0무5패"
+    },
+    {
+      "rank": 3,
+      "team": "KIA",
+      "games": 112,
+      "wins": 60,
+      "losses": 50,
+      "draws": 2,
+      "winRate": 0.545,
+      "gamesBehind": "6",
+      "streak": "2패",
+      "recent10": "6승0무4패"
     },
     {
       "rank": 5,
@@ -121,13 +121,13 @@
     {
       "rank": 10,
       "team": "키움",
-      "games": 115,
-      "wins": 41,
+      "games": 116,
+      "wins": 42,
       "losses": 72,
       "draws": 2,
-      "winRate": 0.363,
-      "gamesBehind": "26.5",
-      "streak": "1승",
+      "winRate": 0.368,
+      "gamesBehind": "26",
+      "streak": "2승",
       "recent10": "3승0무7패"
     }
   ],
@@ -282,11 +282,11 @@
     }
   ],
   "nextGame": {
-    "date": "2026-08-23",
-    "opponent": "한화 이글스",
-    "home": false,
-    "stadium": "대전",
-    "time": "19:00"
+    "date": "2026-08-25",
+    "opponent": "NC 다이노스",
+    "home": true,
+    "stadium": "잠실",
+    "time": "18:30"
   },
   "keyPlayers": [
     {
