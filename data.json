@@ -3,120 +3,120 @@
   "updatedAt": "2026-08-23",
   "season": {
     "rank": 3,
-    "wins": 60,
+    "wins": 61,
     "losses": 50,
     "draws": 1,
-    "winRate": 0.545,
+    "winRate": 0.55,
     "gamesBehind": "6"
   },
   "standings": [
     {
       "rank": 1,
       "team": "KT",
-      "games": 107,
-      "wins": 63,
+      "games": 108,
+      "wins": 64,
       "losses": 41,
       "draws": 3,
-      "winRate": 0.606,
+      "winRate": 0.61,
       "gamesBehind": "0",
-      "streak": "1승",
+      "streak": "2승",
       "recent10": "4승1무5패"
     },
     {
       "rank": 2,
       "team": "삼성",
-      "games": 110,
-      "wins": 64,
+      "games": 111,
+      "wins": 65,
       "losses": 44,
       "draws": 2,
-      "winRate": 0.593,
+      "winRate": 0.596,
       "gamesBehind": "1",
-      "streak": "1승",
-      "recent10": "5승0무5패"
+      "streak": "2승",
+      "recent10": "6승0무4패"
     },
     {
       "rank": 3,
       "team": "LG",
-      "games": 111,
-      "wins": 60,
+      "games": 112,
+      "wins": 61,
       "losses": 50,
       "draws": 1,
-      "winRate": 0.545,
+      "winRate": 0.55,
       "gamesBehind": "6",
-      "streak": "2패",
+      "streak": "1승",
       "recent10": "5승0무5패"
     },
     {
-      "rank": 3,
+      "rank": 4,
       "team": "KIA",
       "games": 112,
       "wins": 60,
       "losses": 50,
       "draws": 2,
       "winRate": 0.545,
-      "gamesBehind": "6",
+      "gamesBehind": "6.5",
       "streak": "2패",
       "recent10": "6승0무4패"
     },
     {
       "rank": 5,
       "team": "두산",
-      "games": 111,
-      "wins": 57,
+      "games": 112,
+      "wins": 58,
       "losses": 50,
       "draws": 4,
-      "winRate": 0.533,
+      "winRate": 0.537,
       "gamesBehind": "7.5",
-      "streak": "2패",
+      "streak": "1승",
       "recent10": "5승0무5패"
     },
     {
       "rank": 6,
       "team": "롯데",
-      "games": 109,
+      "games": 110,
       "wins": 50,
-      "losses": 57,
+      "losses": 58,
       "draws": 2,
-      "winRate": 0.467,
-      "gamesBehind": "14.5",
-      "streak": "5승",
-      "recent10": "7승0무3패"
+      "winRate": 0.463,
+      "gamesBehind": "15.5",
+      "streak": "1패",
+      "recent10": "6승0무4패"
     },
     {
       "rank": 7,
       "team": "한화",
-      "games": 108,
+      "games": 109,
       "wins": 49,
-      "losses": 56,
+      "losses": 57,
       "draws": 3,
-      "winRate": 0.467,
-      "gamesBehind": "14.5",
-      "streak": "1승",
-      "recent10": "3승0무7패"
+      "winRate": 0.462,
+      "gamesBehind": "15.5",
+      "streak": "1패",
+      "recent10": "2승0무8패"
     },
     {
       "rank": 8,
       "team": "NC",
-      "games": 105,
+      "games": 106,
       "wins": 48,
-      "losses": 55,
+      "losses": 56,
       "draws": 2,
-      "winRate": 0.466,
-      "gamesBehind": "14.5",
-      "streak": "1패",
+      "winRate": 0.462,
+      "gamesBehind": "15.5",
+      "streak": "2패",
       "recent10": "5승0무5패"
     },
     {
       "rank": 9,
       "team": "SSG",
-      "games": 113,
+      "games": 114,
       "wins": 45,
-      "losses": 63,
+      "losses": 64,
       "draws": 5,
-      "winRate": 0.417,
-      "gamesBehind": "20",
-      "streak": "1승",
-      "recent10": "6승1무3패"
+      "winRate": 0.413,
+      "gamesBehind": "21",
+      "streak": "1패",
+      "recent10": "5승1무4패"
     },
     {
       "rank": 10,
@@ -126,79 +126,71 @@
       "losses": 72,
       "draws": 2,
       "winRate": 0.368,
-      "gamesBehind": "26",
+      "gamesBehind": "26.5",
       "streak": "2승",
       "recent10": "3승0무7패"
     }
   ],
   "lastGame": {
-    "date": "2026-08-21",
+    "date": "2026-08-23",
     "opponent": "한화 이글스",
     "home": false,
-    "teamScore": 11,
-    "opponentScore": 15,
-    "result": "L",
+    "teamScore": 12,
+    "opponentScore": 3,
+    "result": "W",
     "stadium": "대전",
-    "highlight": "원정 한화전 11-15 패배",
-    "winningPitcher": "조동욱",
+    "highlight": "원정 한화전 12-3 승리",
+    "winningPitcher": "카라스코",
     "savePitcher": null,
-    "losingPitcher": "배재준",
+    "losingPitcher": "박준영",
     "scoreBoard": {
       "away": {
         "name": "LG",
         "innings": [
-          7,
+          4,
+          4,
           0,
-          2,
-          0,
-          1,
           1,
           0,
           0,
+          0,
+          3,
           0
         ],
-        "r": 11,
-        "h": 15,
-        "e": 0
+        "r": 12,
+        "h": 10,
+        "e": 2
       },
       "home": {
         "name": "한화",
         "innings": [
           0,
           0,
+          3,
           0,
-          2,
-          3,
-          3,
-          3,
-          4
+          0,
+          0,
+          0,
+          0,
+          0
         ],
-        "r": 15,
-        "h": 20,
-        "e": 1
+        "r": 3,
+        "h": 7,
+        "e": 0
       }
     },
     "keyPlays": [
       {
         "how": "결승타",
-        "result": "김태연(8회 2사 1,3루서 중전 안타)"
+        "result": "문보경(1회 2사 1,2루서 좌익수 2루타)"
       },
       {
         "how": "홈런",
-        "result": "김태연10호(6회1점 김영우) 송찬의11호(6회1점 이형범)"
+        "result": "문정빈15호(1회3점 박준영) 송찬의12호(2회3점 박준영)"
       }
     ]
   },
   "recentForm": [
-    {
-      "result": "W",
-      "opponent": "키움",
-      "home": false,
-      "date": "2026-08-11",
-      "stadium": "고척",
-      "teamScore": 8,
-      "opponentScore": 3
-    },
     {
       "result": "L",
       "opponent": "키움",
@@ -279,6 +271,15 @@
       "stadium": "대전",
       "teamScore": 11,
       "opponentScore": 15
+    },
+    {
+      "result": "W",
+      "opponent": "한화",
+      "home": false,
+      "date": "2026-08-23",
+      "stadium": "대전",
+      "teamScore": 12,
+      "opponentScore": 3
     }
   ],
   "nextGame": {
