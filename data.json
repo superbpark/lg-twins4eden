@@ -278,13 +278,7 @@
       "opponentScore": 3
     }
   ],
-  "nextGame": {
-    "date": "2026-08-30",
-    "opponent": "롯데 자이언츠",
-    "home": false,
-    "stadium": "사직",
-    "time": "18:00"
-  },
+  "nextGame": null,
   "keyPlayers": [
     {
       "title": "홈런왕",
