@@ -1,6 +1,6 @@
 {
   "team": "LG 트윈스",
-  "updatedAt": "2026-08-31",
+  "updatedAt": "2026-09-01",
   "season": {
     "rank": 4,
     "wins": 64,
@@ -278,7 +278,13 @@
       "opponentScore": 3
     }
   ],
-  "nextGame": null,
+  "nextGame": {
+    "date": "2026-09-01",
+    "opponent": "두산 베어스",
+    "home": false,
+    "stadium": "잠실",
+    "time": "18:30"
+  },
   "keyPlayers": [
     {
       "title": "홈런왕",
