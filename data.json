@@ -1,6 +1,6 @@
 {
   "team": "LG 트윈스",
-  "updatedAt": "2026-09-11",
+  "updatedAt": "2026-09-12",
   "season": {
     "rank": 3,
     "wins": 68,
@@ -73,25 +73,25 @@
     {
       "rank": 6,
       "team": "NC",
-      "games": 119,
-      "wins": 57,
+      "games": 120,
+      "wins": 58,
       "losses": 60,
       "draws": 2,
-      "winRate": 0.487,
-      "gamesBehind": "15",
-      "streak": "2승",
+      "winRate": 0.492,
+      "gamesBehind": "14.5",
+      "streak": "3승",
       "recent10": "8승0무2패"
     },
     {
       "rank": 7,
       "team": "한화",
-      "games": 123,
+      "games": 124,
       "wins": 54,
-      "losses": 66,
+      "losses": 67,
       "draws": 3,
-      "winRate": 0.45,
-      "gamesBehind": "19.5",
-      "streak": "1패",
+      "winRate": 0.446,
+      "gamesBehind": "20",
+      "streak": "2패",
       "recent10": "5승0무5패"
     },
     {
