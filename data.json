@@ -3,95 +3,95 @@
   "updatedAt": "2026-09-13",
   "season": {
     "rank": 3,
-    "wins": 69,
+    "wins": 70,
     "losses": 55,
     "draws": 1,
-    "winRate": 0.556,
+    "winRate": 0.56,
     "gamesBehind": "7"
   },
   "standings": [
     {
       "rank": 1,
       "team": "KT",
-      "games": 123,
-      "wins": 74,
+      "games": 124,
+      "wins": 75,
       "losses": 46,
       "draws": 3,
-      "winRate": 0.617,
+      "winRate": 0.62,
       "gamesBehind": "0",
-      "streak": "5승",
+      "streak": "6승",
       "recent10": "7승0무3패"
     },
     {
       "rank": 2,
       "team": "삼성",
-      "games": 125,
+      "games": 126,
       "wins": 74,
-      "losses": 48,
+      "losses": 49,
       "draws": 3,
-      "winRate": 0.607,
-      "gamesBehind": "1",
-      "streak": "1패",
-      "recent10": "6승0무4패"
+      "winRate": 0.602,
+      "gamesBehind": "2",
+      "streak": "2패",
+      "recent10": "5승0무5패"
     },
     {
       "rank": 3,
       "team": "LG",
-      "games": 125,
-      "wins": 69,
+      "games": 126,
+      "wins": 70,
       "losses": 55,
       "draws": 1,
-      "winRate": 0.556,
+      "winRate": 0.56,
       "gamesBehind": "7",
-      "streak": "1승",
+      "streak": "2승",
       "recent10": "6승0무4패"
     },
     {
       "rank": 4,
       "team": "KIA",
-      "games": 125,
-      "wins": 67,
+      "games": 126,
+      "wins": 68,
       "losses": 56,
       "draws": 2,
-      "winRate": 0.545,
+      "winRate": 0.548,
       "gamesBehind": "8.5",
-      "streak": "1패",
-      "recent10": "4승0무6패"
+      "streak": "1승",
+      "recent10": "5승0무5패"
     },
     {
       "rank": 5,
       "team": "두산",
-      "games": 127,
-      "wins": 63,
+      "games": 128,
+      "wins": 64,
       "losses": 60,
       "draws": 4,
-      "winRate": 0.512,
+      "winRate": 0.516,
       "gamesBehind": "12.5",
-      "streak": "1패",
-      "recent10": "2승0무8패"
+      "streak": "1승",
+      "recent10": "3승0무7패"
     },
     {
       "rank": 6,
       "team": "NC",
-      "games": 121,
+      "games": 122,
       "wins": 59,
-      "losses": 60,
+      "losses": 61,
       "draws": 2,
-      "winRate": 0.496,
-      "gamesBehind": "14.5",
-      "streak": "4승",
-      "recent10": "8승0무2패"
+      "winRate": 0.492,
+      "gamesBehind": "15.5",
+      "streak": "1패",
+      "recent10": "7승0무3패"
     },
     {
       "rank": 7,
       "team": "한화",
-      "games": 124,
+      "games": 125,
       "wins": 54,
-      "losses": 67,
+      "losses": 68,
       "draws": 3,
-      "winRate": 0.446,
-      "gamesBehind": "20.5",
-      "streak": "2패",
+      "winRate": 0.443,
+      "gamesBehind": "21.5",
+      "streak": "3패",
       "recent10": "5승0무5패"
     },
     {
@@ -102,20 +102,20 @@
       "losses": 69,
       "draws": 5,
       "winRate": 0.439,
-      "gamesBehind": "21.5",
+      "gamesBehind": "22",
       "streak": "1패",
       "recent10": "6승0무4패"
     },
     {
       "rank": 9,
       "team": "롯데",
-      "games": 123,
+      "games": 124,
       "wins": 53,
-      "losses": 68,
+      "losses": 69,
       "draws": 2,
-      "winRate": 0.438,
-      "gamesBehind": "21.5",
-      "streak": "1승",
+      "winRate": 0.434,
+      "gamesBehind": "22.5",
+      "streak": "1패",
       "recent10": "3승0무7패"
     },
     {
@@ -126,80 +126,71 @@
       "losses": 83,
       "draws": 3,
       "winRate": 0.352,
-      "gamesBehind": "33",
+      "gamesBehind": "33.5",
       "streak": "3패",
       "recent10": "3승0무7패"
     }
   ],
   "lastGame": {
-    "date": "2026-09-12",
+    "date": "2026-09-13",
     "opponent": "삼성 라이온즈",
     "home": false,
-    "teamScore": 4,
-    "opponentScore": 3,
+    "teamScore": 13,
+    "opponentScore": 5,
     "result": "W",
     "stadium": "대구",
-    "highlight": "원정 삼성전 4-3 승리",
-    "winningPitcher": "고우석",
-    "savePitcher": "손주영",
-    "losingPitcher": "이승민",
+    "highlight": "원정 삼성전 13-5 승리",
+    "winningPitcher": "임찬규",
+    "savePitcher": null,
+    "losingPitcher": "최원태",
     "scoreBoard": {
       "away": {
         "name": "LG",
         "innings": [
           0,
           0,
-          1,
-          0,
-          1,
-          0,
-          0,
           2,
+          5,
+          2,
+          0,
+          1,
+          3,
           0
         ],
-        "r": 4,
-        "h": 12,
-        "e": 1
+        "r": 13,
+        "h": 14,
+        "e": 2
       },
       "home": {
         "name": "삼성",
         "innings": [
-          0,
           2,
           0,
           0,
           0,
           0,
           1,
+          1,
           0,
-          0
+          1
         ],
-        "r": 3,
-        "h": 10,
-        "e": 2
+        "r": 5,
+        "h": 9,
+        "e": 0
       }
     },
     "keyPlays": [
       {
         "how": "결승타",
-        "result": "송찬의(8회 1사 만루서 3루수 땅볼)"
+        "result": "신민재(4회 1사 만루서 중전 안타)"
       },
       {
         "how": "홈런",
-        "result": "강민호11호(2회2점 톨허스트) 오스틴37호38호(3회1점 5회1점 후라도)"
+        "result": "박승규11호12호(1회2점 6회1점 임찬규) 오스틴39호(4회3점 양창섭) 오지환10호11호(7회1점 8회2점 김백산 임기영)"
       }
     ]
   },
   "recentForm": [
-    {
-      "result": "W",
-      "opponent": "롯데",
-      "home": false,
-      "date": "2026-08-29",
-      "stadium": "사직",
-      "teamScore": 8,
-      "opponentScore": 3
-    },
     {
       "result": "W",
       "opponent": "두산",
@@ -280,6 +271,15 @@
       "stadium": "대구",
       "teamScore": 4,
       "opponentScore": 3
+    },
+    {
+      "result": "W",
+      "opponent": "삼성",
+      "home": false,
+      "date": "2026-09-13",
+      "stadium": "대구",
+      "teamScore": 13,
+      "opponentScore": 5
     }
   ],
   "nextGame": {
@@ -294,7 +294,7 @@
       "title": "홈런왕",
       "name": "오스틴",
       "stat": "홈런",
-      "value": "38"
+      "value": "39"
     },
     {
       "title": "타율왕",
@@ -312,13 +312,13 @@
       "title": "다승왕",
       "name": "임찬규",
       "stat": "승",
-      "value": "13"
+      "value": "14"
     },
     {
       "title": "방어율왕",
-      "name": "임찬규",
+      "name": "톨허스트",
       "stat": "방어율",
-      "value": "4.14"
+      "value": "4.19"
     },
     {
       "title": "세이브왕",
