@@ -3,11 +3,11 @@
   "updatedAt": "2026-09-20",
   "season": {
     "rank": 3,
-    "wins": 74,
+    "wins": 75,
     "losses": 55,
     "draws": 1,
-    "winRate": 0.574,
-    "gamesBehind": "5.5"
+    "winRate": 0.577,
+    "gamesBehind": "5"
   },
   "standings": [
     {
@@ -37,14 +37,14 @@
     {
       "rank": 3,
       "team": "LG",
-      "games": 130,
-      "wins": 74,
+      "games": 131,
+      "wins": 75,
       "losses": 55,
       "draws": 1,
-      "winRate": 0.574,
-      "gamesBehind": "5.5",
-      "streak": "6승",
-      "recent10": "6승0무4패"
+      "winRate": 0.577,
+      "gamesBehind": "5",
+      "streak": "7승",
+      "recent10": "7승0무3패"
     },
     {
       "rank": 4,
@@ -85,13 +85,13 @@
     {
       "rank": 7,
       "team": "SSG",
-      "games": 131,
-      "wins": 57,
+      "games": 132,
+      "wins": 58,
       "losses": 69,
       "draws": 5,
-      "winRate": 0.452,
-      "gamesBehind": "21",
-      "streak": "3승",
+      "winRate": 0.457,
+      "gamesBehind": "20.5",
+      "streak": "4승",
       "recent10": "7승0무3패"
     },
     {
@@ -109,26 +109,26 @@
     {
       "rank": 9,
       "team": "한화",
-      "games": 129,
+      "games": 130,
       "wins": 54,
-      "losses": 71,
+      "losses": 72,
       "draws": 4,
-      "winRate": 0.432,
-      "gamesBehind": "23.5",
-      "streak": "6패",
-      "recent10": "3승1무6패"
+      "winRate": 0.429,
+      "gamesBehind": "24",
+      "streak": "7패",
+      "recent10": "2승1무7패"
     },
     {
       "rank": 10,
       "team": "키움",
-      "games": 133,
+      "games": 134,
       "wins": 45,
-      "losses": 84,
+      "losses": 85,
       "draws": 4,
-      "winRate": 0.349,
-      "gamesBehind": "34.5",
-      "streak": "4패",
-      "recent10": "3승1무6패"
+      "winRate": 0.346,
+      "gamesBehind": "35",
+      "streak": "5패",
+      "recent10": "2승1무7패"
     }
   ],
   "lastGame": {
@@ -282,11 +282,11 @@
     }
   ],
   "nextGame": {
-    "date": "2026-09-20",
-    "opponent": "한화 이글스",
+    "date": "2026-09-24",
+    "opponent": "롯데 자이언츠",
     "home": true,
     "stadium": "잠실",
-    "time": "14:00"
+    "time": "17:00"
   },
   "keyPlayers": [
     {
@@ -323,7 +323,7 @@
       "title": "세이브왕",
       "name": "손주영",
       "stat": "세이브",
-      "value": "29"
+      "value": "30"
     }
   ]
 }
