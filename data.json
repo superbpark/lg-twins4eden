@@ -4,23 +4,23 @@
   "season": {
     "rank": 3,
     "wins": 75,
-    "losses": 56,
+    "losses": 57,
     "draws": 1,
-    "winRate": 0.573,
+    "winRate": 0.568,
     "gamesBehind": "6.5"
   },
   "standings": [
     {
       "rank": 1,
       "team": "KT",
-      "games": 132,
+      "games": 133,
       "wins": 80,
-      "losses": 48,
+      "losses": 49,
       "draws": 4,
-      "winRate": 0.625,
+      "winRate": 0.62,
       "gamesBehind": "0",
-      "streak": "1승",
-      "recent10": "7승1무2패"
+      "streak": "1패",
+      "recent10": "6승1무3패"
     },
     {
       "rank": 2,
@@ -30,33 +30,33 @@
       "losses": 52,
       "draws": 3,
       "winRate": 0.6,
-      "gamesBehind": "3",
+      "gamesBehind": "2.5",
       "streak": "2승",
       "recent10": "5승0무5패"
     },
     {
       "rank": 3,
       "team": "LG",
-      "games": 132,
+      "games": 133,
       "wins": 75,
-      "losses": 56,
+      "losses": 57,
       "draws": 1,
-      "winRate": 0.573,
+      "winRate": 0.568,
       "gamesBehind": "6.5",
-      "streak": "1패",
+      "streak": "2패",
       "recent10": "7승0무3패"
     },
     {
       "rank": 4,
       "team": "KIA",
-      "games": 131,
-      "wins": 71,
+      "games": 132,
+      "wins": 72,
       "losses": 58,
       "draws": 2,
-      "winRate": 0.55,
-      "gamesBehind": "9.5",
-      "streak": "1패",
-      "recent10": "5승0무5패"
+      "winRate": 0.554,
+      "gamesBehind": "8.5",
+      "streak": "1승",
+      "recent10": "6승0무4패"
     },
     {
       "rank": 5,
@@ -66,21 +66,21 @@
       "losses": 62,
       "draws": 5,
       "winRate": 0.519,
-      "gamesBehind": "13.5",
+      "gamesBehind": "13",
       "streak": "2승",
       "recent10": "5승1무4패"
     },
     {
       "rank": 6,
       "team": "NC",
-      "games": 132,
-      "wins": 61,
+      "games": 133,
+      "wins": 62,
       "losses": 69,
       "draws": 2,
-      "winRate": 0.469,
-      "gamesBehind": "20",
-      "streak": "1승",
-      "recent10": "2승0무8패"
+      "winRate": 0.473,
+      "gamesBehind": "19",
+      "streak": "2승",
+      "recent10": "3승0무7패"
     },
     {
       "rank": 7,
@@ -90,7 +90,7 @@
       "losses": 71,
       "draws": 2,
       "winRate": 0.454,
-      "gamesBehind": "22",
+      "gamesBehind": "21.5",
       "streak": "6승",
       "recent10": "7승0무3패"
     },
@@ -102,100 +102,94 @@
       "losses": 71,
       "draws": 5,
       "winRate": 0.45,
-      "gamesBehind": "22.5",
+      "gamesBehind": "22",
       "streak": "2패",
       "recent10": "6승0무4패"
     },
     {
       "rank": 9,
       "team": "한화",
-      "games": 133,
+      "games": 134,
       "wins": 54,
-      "losses": 75,
+      "losses": 76,
       "draws": 4,
-      "winRate": 0.419,
+      "winRate": 0.415,
       "gamesBehind": "26.5",
-      "streak": "10패",
+      "streak": "11패",
       "recent10": "0승1무9패"
     },
     {
       "rank": 10,
       "team": "키움",
-      "games": 135,
-      "wins": 45,
+      "games": 136,
+      "wins": 46,
       "losses": 86,
       "draws": 4,
-      "winRate": 0.344,
-      "gamesBehind": "36.5",
-      "streak": "6패",
-      "recent10": "2승1무7패"
+      "winRate": 0.348,
+      "gamesBehind": "35.5",
+      "streak": "1승",
+      "recent10": "3승1무6패"
     }
   ],
   "lastGame": {
-    "date": "2026-09-24",
-    "opponent": "롯데 자이언츠",
-    "home": true,
-    "teamScore": 4,
-    "opponentScore": 6,
+    "date": "2026-09-26",
+    "opponent": "KIA 타이거즈",
+    "home": false,
+    "teamScore": 1,
+    "opponentScore": 5,
     "result": "L",
-    "stadium": "잠실",
-    "highlight": "홈 롯데전 4-6 패배",
-    "winningPitcher": "로드리게스",
-    "savePitcher": "이이무라",
-    "losingPitcher": "톨허스트",
+    "stadium": "광주",
+    "highlight": "원정 KIA전 1-5 패배",
+    "winningPitcher": "네일",
+    "savePitcher": "곽도규",
+    "losingPitcher": "임찬규",
     "scoreBoard": {
       "away": {
-        "name": "롯데",
-        "innings": [
-          0,
-          0,
-          0,
-          0,
-          5,
-          0,
-          0,
-          1,
-          0
-        ],
-        "r": 6,
-        "h": 15,
-        "e": 1
-      },
-      "home": {
         "name": "LG",
         "innings": [
           0,
           0,
-          4,
           0,
           0,
           0,
           0,
+          0,
+          0,
+          1
+        ],
+        "r": 1,
+        "h": 8,
+        "e": 0
+      },
+      "home": {
+        "name": "KIA",
+        "innings": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          3,
           0,
           0
         ],
-        "r": 4,
-        "h": 7,
-        "e": 1
+        "r": 5,
+        "h": 10,
+        "e": 0
       }
     },
     "keyPlays": [
       {
         "how": "결승타",
-        "result": "손성빈(5회 2사 1,3루서 우중간 2루타)"
+        "result": "나성범(2회 무사서 우월 홈런)"
+      },
+      {
+        "how": "홈런",
+        "result": "나성범29호(2회1점 임찬규)"
       }
     ]
   },
   "recentForm": [
-    {
-      "result": "L",
-      "opponent": "키움",
-      "home": true,
-      "date": "2026-09-08",
-      "stadium": "잠실",
-      "teamScore": 3,
-      "opponentScore": 8
-    },
     {
       "result": "L",
       "opponent": "한화",
@@ -276,6 +270,15 @@
       "stadium": "잠실",
       "teamScore": 4,
       "opponentScore": 6
+    },
+    {
+      "result": "L",
+      "opponent": "KIA",
+      "home": false,
+      "date": "2026-09-26",
+      "stadium": "광주",
+      "teamScore": 1,
+      "opponentScore": 5
     }
   ],
   "nextGame": {
@@ -314,7 +317,7 @@
       "title": "방어율왕",
       "name": "임찬규",
       "stat": "방어율",
-      "value": "4.06"
+      "value": "4.15"
     },
     {
       "title": "세이브왕",
