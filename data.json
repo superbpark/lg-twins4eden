@@ -4,177 +4,177 @@
   "season": {
     "rank": 4,
     "wins": 75,
-    "losses": 62,
+    "losses": 63,
     "draws": 1,
-    "winRate": 0.547,
-    "gamesBehind": "11.5"
+    "winRate": 0.543,
+    "gamesBehind": "12.5"
   },
   "standings": [
     {
       "rank": 1,
       "team": "KT",
-      "games": 139,
-      "wins": 85,
+      "games": 140,
+      "wins": 86,
       "losses": 49,
       "draws": 5,
-      "winRate": 0.634,
+      "winRate": 0.637,
       "gamesBehind": "0",
-      "streak": "5승",
+      "streak": "6승",
       "recent10": "7승1무2패"
     },
     {
       "rank": 2,
       "team": "삼성",
-      "games": 138,
+      "games": 139,
       "wins": 82,
-      "losses": 53,
+      "losses": 54,
       "draws": 3,
-      "winRate": 0.607,
-      "gamesBehind": "3.5",
-      "streak": "1패",
-      "recent10": "7승0무3패"
+      "winRate": 0.603,
+      "gamesBehind": "4.5",
+      "streak": "2패",
+      "recent10": "6승0무4패"
     },
     {
       "rank": 3,
       "team": "KIA",
-      "games": 137,
-      "wins": 74,
+      "games": 138,
+      "wins": 75,
       "losses": 61,
       "draws": 2,
-      "winRate": 0.548,
+      "winRate": 0.551,
       "gamesBehind": "11.5",
-      "streak": "2승",
+      "streak": "3승",
       "recent10": "6승0무4패"
     },
     {
       "rank": 4,
       "team": "LG",
-      "games": 138,
+      "games": 139,
       "wins": 75,
-      "losses": 62,
+      "losses": 63,
       "draws": 1,
-      "winRate": 0.547,
-      "gamesBehind": "11.5",
-      "streak": "7패",
-      "recent10": "3승0무7패"
+      "winRate": 0.543,
+      "gamesBehind": "12.5",
+      "streak": "8패",
+      "recent10": "2승0무8패"
     },
     {
       "rank": 5,
       "team": "두산",
-      "games": 140,
-      "wins": 71,
+      "games": 141,
+      "wins": 72,
       "losses": 64,
       "draws": 5,
-      "winRate": 0.526,
+      "winRate": 0.529,
       "gamesBehind": "14.5",
-      "streak": "1승",
-      "recent10": "6승0무4패"
+      "streak": "2승",
+      "recent10": "7승0무3패"
     },
     {
       "rank": 6,
       "team": "SSG",
-      "games": 139,
-      "wins": 62,
+      "games": 140,
+      "wins": 63,
       "losses": 72,
       "draws": 5,
-      "winRate": 0.463,
+      "winRate": 0.467,
       "gamesBehind": "23",
-      "streak": "1승",
+      "streak": "2승",
       "recent10": "7승0무3패"
     },
     {
       "rank": 7,
       "team": "NC",
-      "games": 139,
+      "games": 140,
       "wins": 63,
-      "losses": 74,
+      "losses": 75,
       "draws": 2,
-      "winRate": 0.46,
-      "gamesBehind": "23.5",
-      "streak": "1패",
-      "recent10": "4승0무6패"
+      "winRate": 0.457,
+      "gamesBehind": "24.5",
+      "streak": "2패",
+      "recent10": "3승0무7패"
     },
     {
       "rank": 8,
       "team": "롯데",
-      "games": 137,
+      "games": 138,
       "wins": 61,
-      "losses": 73,
+      "losses": 74,
       "draws": 3,
-      "winRate": 0.455,
-      "gamesBehind": "24",
-      "streak": "1패",
-      "recent10": "7승1무2패"
+      "winRate": 0.452,
+      "gamesBehind": "25",
+      "streak": "2패",
+      "recent10": "6승1무3패"
     },
     {
       "rank": 9,
       "team": "한화",
-      "games": 140,
-      "wins": 55,
+      "games": 141,
+      "wins": 56,
       "losses": 81,
       "draws": 4,
-      "winRate": 0.404,
+      "winRate": 0.409,
       "gamesBehind": "31",
-      "streak": "5패",
-      "recent10": "1승0무9패"
+      "streak": "1승",
+      "recent10": "2승0무8패"
     },
     {
       "rank": 10,
       "team": "키움",
-      "games": 141,
+      "games": 142,
       "wins": 49,
-      "losses": 88,
+      "losses": 89,
       "draws": 4,
-      "winRate": 0.358,
-      "gamesBehind": "37.5",
-      "streak": "2승",
+      "winRate": 0.355,
+      "gamesBehind": "38.5",
+      "streak": "1패",
       "recent10": "4승1무5패"
     }
   ],
   "lastGame": {
-    "date": "2026-10-04",
+    "date": "2026-10-05",
     "opponent": "KIA 타이거즈",
     "home": true,
-    "teamScore": 5,
+    "teamScore": 4,
     "opponentScore": 6,
     "result": "L",
     "stadium": "잠실",
-    "highlight": "홈 KIA전 5-6 패배",
+    "highlight": "홈 KIA전 4-6 패배",
     "winningPitcher": "정해영",
-    "savePitcher": "전상현",
-    "losingPitcher": "우강훈",
+    "savePitcher": "성영탁",
+    "losingPitcher": "고우석",
     "scoreBoard": {
       "away": {
         "name": "KIA",
         "innings": [
           0,
+          0,
+          0,
           2,
           0,
-          0,
-          0,
-          0,
-          0,
           1,
+          0,
+          0,
           3
         ],
         "r": 6,
-        "h": 8,
-        "e": 2
+        "h": 10,
+        "e": 0
       },
       "home": {
         "name": "LG",
         "innings": [
-          2,
-          0,
-          0,
-          1,
+          4,
           0,
           0,
           0,
-          2,
+          0,
+          0,
+          0,
+          0,
           0
         ],
-        "r": 5,
+        "r": 4,
         "h": 7,
         "e": 1
       }
@@ -182,24 +182,15 @@
     "keyPlays": [
       {
         "how": "결승타",
-        "result": "카스트로(9회 1사 만루서 좌익수 희생플라이)"
+        "result": "김도영(9회 2사 1,2루서 좌월 홈런)"
       },
       {
         "how": "홈런",
-        "result": "오스틴40호(1회2점 시라카와) 이재원8호(4회1점 시라카와) 박동원13호(8회2점 조상우)"
+        "result": "김도영42호(9회3점 고우석)"
       }
     ]
   },
   "recentForm": [
-    {
-      "result": "W",
-      "opponent": "KT",
-      "home": false,
-      "date": "2026-09-18",
-      "stadium": "수원",
-      "teamScore": 12,
-      "opponentScore": 1
-    },
     {
       "result": "W",
       "opponent": "한화",
@@ -280,14 +271,23 @@
       "stadium": "잠실",
       "teamScore": 5,
       "opponentScore": 6
+    },
+    {
+      "result": "L",
+      "opponent": "KIA",
+      "home": true,
+      "date": "2026-10-05",
+      "stadium": "잠실",
+      "teamScore": 4,
+      "opponentScore": 6
     }
   ],
   "nextGame": {
-    "date": "2026-10-05",
-    "opponent": "KIA 타이거즈",
+    "date": "2026-10-06",
+    "opponent": "NC 다이노스",
     "home": true,
     "stadium": "잠실",
-    "time": "14:00"
+    "time": "18:30"
   },
   "keyPlayers": [
     {
@@ -300,13 +300,13 @@
       "title": "타율왕",
       "name": "오스틴",
       "stat": "타율",
-      "value": ".340"
+      "value": ".338"
     },
     {
       "title": "도루왕",
       "name": "박해민",
       "stat": "도루",
-      "value": "37"
+      "value": "39"
     },
     {
       "title": "다승왕",
