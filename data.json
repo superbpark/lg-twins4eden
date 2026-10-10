@@ -3,11 +3,11 @@
   "updatedAt": "2026-10-10",
   "season": {
     "rank": 4,
-    "wins": 77,
+    "wins": 78,
     "losses": 64,
     "draws": 1,
-    "winRate": 0.546,
-    "gamesBehind": "13"
+    "winRate": 0.549,
+    "gamesBehind": "12.5"
   },
   "standings": [
     {
@@ -49,14 +49,14 @@
     {
       "rank": 4,
       "team": "LG",
-      "games": 142,
-      "wins": 77,
+      "games": 143,
+      "wins": 78,
       "losses": 64,
       "draws": 1,
-      "winRate": 0.546,
-      "gamesBehind": "13",
-      "streak": "1패",
-      "recent10": "2승0무8패"
+      "winRate": 0.549,
+      "gamesBehind": "12.5",
+      "streak": "1승",
+      "recent10": "3승0무7패"
     },
     {
       "rank": 5,
@@ -84,18 +84,6 @@
     },
     {
       "rank": 7,
-      "team": "롯데",
-      "games": 141,
-      "wins": 62,
-      "losses": 76,
-      "draws": 3,
-      "winRate": 0.449,
-      "gamesBehind": "26.5",
-      "streak": "1승",
-      "recent10": "4승1무5패"
-    },
-    {
-      "rank": 8,
       "team": "NC",
       "games": 143,
       "wins": 63,
@@ -105,6 +93,18 @@
       "gamesBehind": "27",
       "streak": "5패",
       "recent10": "1승0무9패"
+    },
+    {
+      "rank": 8,
+      "team": "롯데",
+      "games": 142,
+      "wins": 62,
+      "losses": 77,
+      "draws": 3,
+      "winRate": 0.446,
+      "gamesBehind": "27",
+      "streak": "1패",
+      "recent10": "3승1무6패"
     },
     {
       "rank": 9,
@@ -282,11 +282,11 @@
     }
   ],
   "nextGame": {
-    "date": "2026-10-10",
-    "opponent": "롯데 자이언츠",
+    "date": "2026-10-12",
+    "opponent": "KIA 타이거즈",
     "home": false,
-    "stadium": "사직",
-    "time": "14:00"
+    "stadium": "광주",
+    "time": "18:30"
   },
   "keyPlayers": [
     {
@@ -299,13 +299,13 @@
       "title": "타율왕",
       "name": "오스틴",
       "stat": "타율",
-      "value": ".337"
+      "value": ".334"
     },
     {
       "title": "도루왕",
       "name": "박해민",
       "stat": "도루",
-      "value": "41"
+      "value": "42"
     },
     {
       "title": "다승왕",
@@ -317,7 +317,7 @@
       "title": "방어율왕",
       "name": "톨허스트",
       "stat": "방어율",
-      "value": "4.32"
+      "value": "4.24"
     },
     {
       "title": "세이브왕",
